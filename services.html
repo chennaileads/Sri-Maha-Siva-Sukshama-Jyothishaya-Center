@@ -41,7 +41,6 @@
   right: 20px;
   bottom: 30px;
   z-index: 9999;
-
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -55,25 +54,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 22px;
   color: #fff;
   text-decoration: none;
-
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   transition: all 0.3s ease;
   position: relative;
 }
 
 /* WhatsApp (Official Green) */
-.whatsapp {
-  background: #25D366;
-}
-
+.whatsapp { background: #25D366; }
 /* Call (Professional Red) */
-.call {
-  background: #E53935;
-}
+.call { background: #E53935; }
 
 /* Hover Effects */
 .contact-btn:hover {
@@ -82,13 +74,8 @@
 }
 
 /* Glow Effect */
-.whatsapp:hover {
-  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
-}
-
-.call:hover {
-  box-shadow: 0 0 15px rgba(229, 57, 53, 0.6);
-}
+.whatsapp:hover { box-shadow: 0 0 15px rgba(37, 211, 102, 0.6); }
+.call:hover { box-shadow: 0 0 15px rgba(229, 57, 53, 0.6); }
 
 /* Floating Animation */
 @keyframes floatY {
@@ -97,29 +84,106 @@
   100% { transform: translateY(0); }
 }
 
-.contact-btn {
+.contact-btn { animation: floatY 3s ease-in-out infinite; }
+.call { animation-delay: 1.5s; }
+
+/* ========== STICKY LANGUAGE BUTTONS WITH TEXT (LEFT SIDE) ========== */
+.floating-language {
+  position: fixed;
+  left: 20px;
+  bottom: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: #2c3e50;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   animation: floatY 3s ease-in-out infinite;
 }
 
-.call {
-  animation-delay: 1.5s;
+.lang-btn:hover {
+  transform: scale(1.05);
+  background: #1a252f;
+}
+
+.lang-btn.active {
+  background: #f5a623;
+  color: #fff;
+}
+
+.lang-flag { font-size: 18px; }
+
+/* Different animation delays */
+.lang-btn:nth-child(1) { animation-delay: 0s; }
+.lang-btn:nth-child(2) { animation-delay: 0.1s; }
+.lang-btn:nth-child(3) { animation-delay: 0.2s; }
+.lang-btn:nth-child(4) { animation-delay: 0.3s; }
+.lang-btn:nth-child(5) { animation-delay: 0.4s; }
+
+@media (max-width: 768px) {
+  .floating-language {
+    left: 8px;
+    bottom: 20px;
+    gap: 6px;
+  }
+  .lang-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+  .lang-flag { font-size: 14px; }
 }
 </style>
 <body>
 
     <div class="floating-contact">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919052732598" target="_blank" class="contact-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <!-- Call -->
+        <a href="tel:+919961343298" class="contact-btn call">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
 
-  <!-- WhatsApp -->
-  <a href="https://wa.me/919052732598" target="_blank" class="contact-btn whatsapp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- Call -->
-  <a href="tel:+919961343298" class="contact-btn call">
-    <i class="fas fa-phone"></i>
-  </a>
-
-</div>
+    <!-- ========== STICKY LANGUAGE BUTTONS (LEFT SIDE) ========== -->
+    <div class="floating-language">
+        <button class="lang-btn" data-lang="en">
+            <span class="lang-flag">🇬🇧</span>
+            <span>ENGLISH</span>
+        </button>
+        <button class="lang-btn" data-lang="ta">
+            <span class="lang-flag">🇮🇳</span>
+            <span>தமிழ்</span>
+        </button>
+        <button class="lang-btn" data-lang="hi">
+            <span class="lang-flag">🇮🇳</span>
+            <span>हिन्दी</span>
+        </button>
+        <button class="lang-btn" data-lang="kn">
+            <span class="lang-flag">🇮🇳</span>
+            <span>ಕನ್ನಡ</span>
+        </button>
+        <button class="lang-btn" data-lang="te">
+            <span class="lang-flag">🇮🇳</span>
+            <span>తెలుగు</span>
+        </button>
+    </div>
 
     <!-- Header Start -->
 	<header class="main-header">
@@ -136,19 +200,13 @@
 					<div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item "><a class="nav-link" href="index.html">Home</a>
-                                   
-                                </li>                                
-                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a>
-                                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="image-gallery.html">Gallery</a></li>
-                              
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>                         
+                                <li class="nav-item "><a class="nav-link trans-text" data-key="nav_home" href="index.html">Home</a></li>                                
+                                <li class="nav-item"><a class="nav-link trans-text" data-key="nav_about" href="about.html">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link trans-text" data-key="nav_services" href="services.html">Services</a></li>
+                                <li class="nav-item"><a class="nav-link trans-text" data-key="nav_gallery" href="image-gallery.html">Gallery</a></li>
+                                <li class="nav-item"><a class="nav-link trans-text" data-key="nav_contact" href="contact.html">Contact Us</a></li>                         
                             </ul>
                         </div>
-                        <!-- Contact Now Box Start -->
-                      
-                        <!-- Contact Now Box End -->
 					</div>
 					<!-- Main Menu End -->
 					<div class="navbar-toggle"></div>
@@ -159,7 +217,6 @@
 	</header>
 	<!-- Header End -->
 
-
     <!-- Page Header Start -->
     <div class="page-header parallaxie">
         <div class="container">
@@ -167,11 +224,11 @@
                 <div class="col-lg-12">
                     <!-- Page Header Box Start -->
                     <div class="page-header-box">
-                        <h1 class="text-anime-style-2" data-cursor="-opaque"><span>Our</span> services</h1>
+                        <h1 class="text-anime-style-2" data-cursor="-opaque"><span class="trans-text" data-key="our_span">Our</span> <span class="trans-text" data-key="services_title">services</span></h1>
                         <nav class="wow fadeInUp">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">services</li>
+                                <li class="breadcrumb-item"><a href="index.html" class="trans-text" data-key="home_breadcrumb">home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span class="trans-text" data-key="services_breadcrumb">services</span></li>
                             </ol>
                         </nav>
                     </div>
@@ -182,192 +239,183 @@
     </div>
     <!-- Page Header End -->
 
-   <!-- Page Services Start -->
-<div class="page-services">
-    <div class="container">
-        <div class="row">
+    <!-- Page Services Start -->
+    <div class="page-services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv1_title">Generalized Report</a></h3>
+                            <p class="trans-text" data-key="serv1_desc">Detailed overview of your life path based on Nadi astrology. Understand your past, present, and future with divine insights.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s1.webp" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Generalized Report</a></h3>
-<p>Detailed overview of your life path based on Nadi astrology.
-Understand your past, present, and future with divine insights.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s1.webp" alt="">
-                        </figure>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv2_title">Family & Finance</a></h3>
+                            <p class="trans-text" data-key="serv2_desc">Guidance on family relationships and financial stability. Find solutions for harmony, wealth, and life balance.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s2.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv3_title">Siblings & Courage</a></h3>
+                            <p class="trans-text" data-key="serv3_desc">Insights into sibling relationships and personal strength. Overcome obstacles with courage and clarity.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s3.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv4_title">Mother & Comforts Chapter</a></h3>
+                            <p class="trans-text" data-key="serv4_desc">Analysis of maternal blessings, home life, and comforts. Know about property, peace, and emotional well-being.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s4.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv5_title">Pregnancy</a></h3>
+                            <p class="trans-text" data-key="serv5_desc">Spiritual guidance for childbirth and parenthood journey. Understand possibilities, timing, and divine blessings.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s5.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp" data-wow-delay="1s">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv6_title">Debts, Disease & Litigation</a></h3>
+                            <p class="trans-text" data-key="serv6_desc">Solutions for financial debts, health issues, and legal matters. Reduce negative impacts with proper remedies and guidance.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s6.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv7_title">Marriage</a></h3>
+                            <p class="trans-text" data-key="serv7_desc">Know about marriage timing, compatibility, and obstacles. Get guidance for a happy and successful married life.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s7.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv8_title">Longevity</a></h3>
+                            <p class="trans-text" data-key="serv8_desc">Insights into lifespan, health patterns, and life phases. Prepare for a balanced and peaceful life journey.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s8.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv9_title">Spiritual Attainment & Fortunes</a></h3>
+                            <p class="trans-text" data-key="serv9_desc">Discover your spiritual path and divine blessings. Enhance fortune through remedies and spiritual practices.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s9.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv10_title">Profession</a></h3>
+                            <p class="trans-text" data-key="serv10_desc">Career guidance based on your destiny and planetary positions. Choose the right path for success and growth.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s10.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv11_title">Profits & Second Marriage</a></h3>
+                            <p class="trans-text" data-key="serv11_desc">Understand business gains, profits, and opportunities. Guidance on second marriage possibilities and outcomes.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s11.jpeg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item wow fadeInUp">
+                        <div class="service-content">
+                            <h3><a href="contact.html" class="trans-text" data-key="serv12_title">Expenditure & Losses</a></h3>
+                            <p class="trans-text" data-key="serv12_desc">Analyze financial losses and unnecessary expenses. Get remedies to improve savings and stability.</p>
+                        </div>
+                        <div class="service-image">
+                            <figure class="image-anime">
+                                <img src="images/s12.jpg" alt="">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Family & Finance</a></h3>
-<p>Guidance on family relationships and financial stability.
-Find solutions for harmony, wealth, and life balance.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s2.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Siblings & Courage</a></h3>
-<p>Insights into sibling relationships and personal strength.
-Overcome obstacles with courage and clarity.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s3.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Mother & Comforts Chapter</a></h3>
-<p>Analysis of maternal blessings, home life, and comforts.
-Know about property, peace, and emotional well-being.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s4.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Pregnancy</a></h3>
-<p>Spiritual guidance for childbirth and parenthood journey.
-Understand possibilities, timing, and divine blessings.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s5.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp" data-wow-delay="1s">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Debts, Disease & Litigation</a></h3>
-<p>Solutions for financial debts, health issues, and legal matters.
-Reduce negative impacts with proper remedies and guidance.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s6.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Marriage</a></h3>
-<p>Know about marriage timing, compatibility, and obstacles.
-Get guidance for a happy and successful married life.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s7.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Longevity</a></h3>
-<p>Insights into lifespan, health patterns, and life phases.
-Prepare for a balanced and peaceful life journey.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s8.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Spiritual Attainment & Fortunes</a></h3>
-<p>Discover your spiritual path and divine blessings.
-Enhance fortune through remedies and spiritual practices.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s9.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Profession</a></h3>
-<p>Career guidance based on your destiny and planetary positions.
-Choose the right path for success and growth.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s10.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Profits & Second Marriage</a></h3>
-<p>Understand business gains, profits, and opportunities.
-Guidance on second marriage possibilities and outcomes.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s11.jpeg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item wow fadeInUp">
-                    <div class="service-content">
-                        <h3><a href="contact.html">Expenditure & Losses</a></h3>
-<p>Analyze financial losses and unnecessary expenses.
-Get remedies to improve savings and stability.</p>                    </div>
-                    <div class="service-image">
-                        <figure class="image-anime">
-                            <img src="images/s12.jpg" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
-</div>
-<!-- Page Services End -->
+    <!-- Page Services End -->
 
-   
-  
-
-   
-
- 
-
-       <!-- Main Footer Section Start -->
+    <!-- Main Footer Section Start -->
     <footer class="main-footer">
         <div class="container">
             <div class="row">
@@ -385,25 +433,22 @@ Get remedies to improve savings and stability.</p>                    </div>
                             <!-- Footer Contact Detail Start -->
                             <div class="footer-contact-detail">
                                 <div class="footer-contact-item">
-                                    <p>Mobile</p>
+                                    <p class="trans-text" data-key="mobile_label">Mobile</p>
                                     <h3><a href="tel:+919052732598">+91 90527 32598</a></h3>
                                     <h3><a href="tel:+919961343298">+91 99613 43298</a></h3>
                                 </div>
                                 
                                 <div class="footer-contact-item">
-                                    <p>Location</p>
-                                    <h3><a href="#">MIG-5 Ground Floor
-6th Cross
-Teachers Colony Hosur</a></h3>
+                                    <p class="trans-text" data-key="location_label">Location</p>
+                                    <h3><a href="#" class="trans-text" data-key="footer_address">MIG-5 Ground Floor 6th Cross Teachers Colony Hosur</a></h3>
                                 </div>
                             </div>
                             <!-- Footer Contact Detail End -->
                             
                             <!-- Footer Social Links Start -->
                             <div class="footer-social-links">
-                                <h3>Follow on</h3>
+                                <h3 class="trans-text" data-key="follow_us">Follow on</h3>
                                 <ul>
-                                    
                                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>                                    								
                                 </ul>
@@ -414,49 +459,36 @@ Teachers Colony Hosur</a></h3>
 
                         <!-- Footer Links Box Start -->
                         <div class="footer-links-box">
-                            <!-- Newsletter Form Start -->
-                            <!-- <div class="newsletter-form">
-                                <form id="newsletterForm" action="#" method="POST">
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control" id="mail" placeholder="Enter Your Email" required="">
-                                        <button type="submit" class="newsletter-btn"><i class="fa-regular fa-paper-plane"></i></button>
-                                    </div>
-                                </form>
-                            </div> -->
-                            <!-- Newsletter Form End -->
-
                             <!-- Footer Links Start -->
                             <div class="footer-links">
-                                <h3>Quick link</h3>
+                                <h3 class="trans-text" data-key="quick_link">Quick link</h3>
                                 <ul>
-                                    <li><a href="index.html">home</a></li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="services.html">services</a></li>
-                                    <li><a href="image-gallery.html">Gallery</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="index.html" class="trans-text" data-key="nav_home">home</a></li>
+                                    <li><a href="about.html" class="trans-text" data-key="nav_about">About us</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="nav_services">services</a></li>
+                                    <li><a href="image-gallery.html" class="trans-text" data-key="nav_gallery">Gallery</a></li>
+                                    <li><a href="contact.html" class="trans-text" data-key="nav_contact">Contact Us</a></li>
                                 </ul>
                             </div>
                             <!-- Footer Links End -->
                             
                             <!-- Footer Links Start -->
                             <div class="footer-links footer-service-links">
-                                <h3>Our Services</h3>
+                                <h3 class="trans-text" data-key="our_services">Our Services</h3>
                                 <ul>
-                                    <li><a href="services.html">Generalized Report</a></li>
-                                    <li><a href="services.html">Family & Finance</a></li>
-                                    <li><a href="services.html">Siblings & Courage</a></li>
-                                    <li><a href="services.html">Mother & Comforts Chapter</a></li>
-                                    <li><a href="services.html">Debts, Disease & Litigation</a></li>
-                                    <li><a href="services.html">Marriage</a></li>
-                                    <li><a href="services.html">Longevity</a></li>
-                                    <li><a href="services.html">Spiritual Attainment & Fortunes</a></li>
-                                    <li><a href="services.html">Profession</a></li>
-                                    <li><a href="services.html">Expenditure & Losses</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv1">Generalized Report</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv2">Family & Finance</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv3">Siblings & Courage</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv4">Mother & Comforts Chapter</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv5">Debts, Disease & Litigation</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv6">Marriage</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv7">Longevity</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv8">Spiritual Attainment & Fortunes</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv9">Profession</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv10">Expenditure & Losses</a></li>
                                 </ul>
                             </div>
-                            <!-- Footer Links End -->
-                            
-                            
+                            <!-- Footer Links End -->                            
                         </div>
                         <!-- Footer Links Box End -->
                     </div>
@@ -472,12 +504,12 @@ Teachers Colony Hosur</a></h3>
                     <div class="col-md-12">
                         <!-- Copyright Text Start -->
                         <div class="copyright-text">
-    <p>
-        Copyright © <script>document.write(new Date().getFullYear())</script> 
-        Sri Maha Siva Sukshama Jyothishaya Center. All Rights Reserved. 
-        Developed by <a href="https://chennaileads.com" target="_blank">chennaileads.com</a>
-    </p>
-</div>
+                            <p>
+                                Copyright © <script>document.write(new Date().getFullYear())</script> 
+                                Sri Maha Siva Sukshama Jyothishaya Center. All Rights Reserved. 
+                                Developed by <a href="https://chennaileads.com" target="_blank">chennaileads.com</a>
+                            </p>
+                        </div>
                         <!-- Copyright Text End -->
                     </div>
                 </div>
@@ -520,24 +552,210 @@ Teachers Colony Hosur</a></h3>
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
-      <script>
-  const toggleBtn = document.getElementById("callToggle");
-  const enquiryBox = document.getElementById("enquiryBox");
+    
+    <!-- ========== WORKING TRANSLATION SCRIPT ========== -->
+    <script>
+    // Complete translations for 5 languages
+    const translations = {
+        en: {
+            nav_home: "Home", nav_about: "About Us", nav_services: "Services",
+            nav_gallery: "Gallery", nav_contact: "Contact Us",
+            our_span: "Our", services_title: "services", services_breadcrumb: "services",
+            home_breadcrumb: "home",
+            serv1_title: "Generalized Report", serv1_desc: "Detailed overview of your life path based on Nadi astrology. Understand your past, present, and future with divine insights.",
+            serv2_title: "Family & Finance", serv2_desc: "Guidance on family relationships and financial stability. Find solutions for harmony, wealth, and life balance.",
+            serv3_title: "Siblings & Courage", serv3_desc: "Insights into sibling relationships and personal strength. Overcome obstacles with courage and clarity.",
+            serv4_title: "Mother & Comforts Chapter", serv4_desc: "Analysis of maternal blessings, home life, and comforts. Know about property, peace, and emotional well-being.",
+            serv5_title: "Pregnancy", serv5_desc: "Spiritual guidance for childbirth and parenthood journey. Understand possibilities, timing, and divine blessings.",
+            serv6_title: "Debts, Disease & Litigation", serv6_desc: "Solutions for financial debts, health issues, and legal matters. Reduce negative impacts with proper remedies and guidance.",
+            serv7_title: "Marriage", serv7_desc: "Know about marriage timing, compatibility, and obstacles. Get guidance for a happy and successful married life.",
+            serv8_title: "Longevity", serv8_desc: "Insights into lifespan, health patterns, and life phases. Prepare for a balanced and peaceful life journey.",
+            serv9_title: "Spiritual Attainment & Fortunes", serv9_desc: "Discover your spiritual path and divine blessings. Enhance fortune through remedies and spiritual practices.",
+            serv10_title: "Profession", serv10_desc: "Career guidance based on your destiny and planetary positions. Choose the right path for success and growth.",
+            serv11_title: "Profits & Second Marriage", serv11_desc: "Understand business gains, profits, and opportunities. Guidance on second marriage possibilities and outcomes.",
+            serv12_title: "Expenditure & Losses", serv12_desc: "Analyze financial losses and unnecessary expenses. Get remedies to improve savings and stability.",
+            mobile_label: "Mobile", location_label: "Location",
+            footer_address: "MIG-5 Ground Floor, 6th Cross, Teachers Colony, Hosur",
+            follow_us: "Follow on", quick_link: "Quick link", our_services: "Our Services",
+            nav_home: "home", nav_about: "About us", nav_services: "services",
+            nav_gallery: "Gallery", nav_contact: "Contact Us",
+            serv1: "Generalized Report", serv2: "Family & Finance", serv3: "Siblings & Courage",
+            serv4: "Mother & Comforts Chapter", serv5: "Debts, Disease & Litigation",
+            serv6: "Marriage", serv7: "Longevity", serv8: "Spiritual Attainment & Fortunes",
+            serv9: "Profession", serv10: "Expenditure & Losses"
+        },
+        ta: {
+            nav_home: "முகப்பு", nav_about: "எங்களை பற்றி", nav_services: "சேவைகள்",
+            nav_gallery: "கேலரி", nav_contact: "தொடர்பு",
+            our_span: "எங்கள்", services_title: "சேவைகள்", services_breadcrumb: "சேவைகள்",
+            home_breadcrumb: "முகப்பு",
+            serv1_title: "பொது அறிக்கை", serv1_desc: "நாடி ஜோதிடத்தின் அடிப்படையில் உங்கள் வாழ்க்கை பாதையின் விரிவான கண்ணோட்டம். உங்கள் கடந்த காலம், நிகழ்காலம் மற்றும் எதிர்காலத்தை தெய்வீக நுண்ணறிவுடன் புரிந்து கொள்ளுங்கள்.",
+            serv2_title: "குடும்பம் & நிதி", serv2_desc: "குடும்ப உறவுகள் மற்றும் நிதி நிலைத்தன்மைக்கான வழிகாட்டுதல். நல்லிணக்கம், செல்வம் மற்றும் வாழ்க்கை சமநிலைக்கான தீர்வுகளைக் கண்டறியவும்.",
+            serv3_title: "உடன்பிறப்புகள் & தைரியம்", serv3_desc: "உடன்பிறப்பு உறவுகள் மற்றும் தனிப்பட்ட வலிமை பற்றிய நுண்ணறிவுகள். துணிச்சலுடனும் தெளிவுடனும் தடைகளை கடக்கவும்.",
+            serv4_title: "தாய் & ஆறுதல் அத்தியாயம்", serv4_desc: "தாய்வழி ஆசீர்வாதங்கள், வீட்டு வாழ்க்கை மற்றும் ஆறுதல்களின் பகுப்பாய்வு. சொத்து, அமைதி மற்றும் உணர்ச்சி நல்வாழ்வைப் பற்றி அறிக.",
+            serv5_title: "கர்ப்பம்", serv5_desc: "பிரசவம் மற்றும் பெற்றோர் பயணத்திற்கான ஆன்மீக வழிகாட்டுதல். சாத்தியக்கூறுகள், நேரம் மற்றும் தெய்வீக ஆசீர்வாதங்களைப் புரிந்து கொள்ளுங்கள்.",
+            serv6_title: "கடன், நோய் & வழக்கு", serv6_desc: "நிதிக் கடன்கள், உடல்நலப் பிரச்சினைகள் மற்றும் சட்ட விஷயங்களுக்கான தீர்வுகள். சரியான பரிகாரங்கள் மற்றும் வழிகாட்டுதலுடன் எதிர்மறை தாக்கங்களைக் குறைக்கவும்.",
+            serv7_title: "திருமணம்", serv7_desc: "திருமண நேரம், பொருந்தக்கூடிய தன்மை மற்றும் தடைகளைப் பற்றி அறிக. மகிழ்ச்சியான மற்றும் வெற்றிகரமான திருமண வாழ்க்கைக்கான வழிகாட்டுதலைப் பெறுங்கள்.",
+            serv8_title: "நீண்ட ஆயுள்", serv8_desc: "ஆயுட்காலம், உடல்நல முறைகள் மற்றும் வாழ்க்கை கட்டங்கள் பற்றிய நுண்ணறிவுகள். சீரான மற்றும் அமைதியான வாழ்க்கைப் பயணத்திற்குத் தயார்படுத்துங்கள்.",
+            serv9_title: "ஆன்மீக அடைதல் & அதிர்ஷ்டங்கள்", serv9_desc: "உங்கள் ஆன்மீக பாதையையும் தெய்வீக ஆசீர்வாதங்களையும் கண்டறியவும். பரிகாரங்கள் மற்றும் ஆன்மீக நடைமுறைகள் மூலம் அதிர்ஷ்டத்தை மேம்படுத்தவும்.",
+            serv10_title: "தொழில்", serv10_desc: "உங்கள் விதி மற்றும் கிரக நிலைகளை அடிப்படையாகக் கொண்ட தொழில் வழிகாட்டுதல். வெற்றி மற்றும் வளர்ச்சிக்கான சரியான பாதையைத் தேர்வுசெய்க.",
+            serv11_title: "லாபம் & இரண்டாம் திருமணம்", serv11_desc: "வணிக ஆதாயங்கள், லாபங்கள் மற்றும் வாய்ப்புகளைப் புரிந்து கொள்ளுங்கள். இரண்டாம் திருமண சாத்தியக்கூறுகள் மற்றும் விளைவுகள் குறித்த வழிகாட்டுதல்.",
+            serv12_title: "செலவு & இழப்புகள்", serv12_desc: "நிதி இழப்புகள் மற்றும் தேவையற்ற செலவுகளை பகுப்பாய்வு செய்யவும். சேமிப்பு மற்றும் நிலைத்தன்மையை மேம்படுத்த பரிகாரங்களைப் பெறுங்கள்.",
+            mobile_label: "அலைபேசி", location_label: "இருப்பிடம்",
+            footer_address: "MIG-5 தரை தளம், 6வது குறுக்கு சாலை, ஆசிரியர் காலனி, ஹோசூர்",
+            follow_us: "பின்தொடரவும்", quick_link: "விரைவு இணைப்புகள்", our_services: "எங்கள் சேவைகள்",
+            nav_home: "முகப்பு", nav_about: "எங்களை பற்றி", nav_services: "சேவைகள்",
+            nav_gallery: "கேலரி", nav_contact: "தொடர்பு",
+            serv1: "பொது அறிக்கை", serv2: "குடும்பம் & நிதி", serv3: "உடன்பிறப்புகள் & தைரியம்",
+            serv4: "தாய் & ஆறுதல்", serv5: "கடன், நோய் & வழக்கு",
+            serv6: "திருமணம்", serv7: "நீண்ட ஆயுள்", serv8: "ஆன்மீகம் & அதிர்ஷ்டங்கள்",
+            serv9: "தொழில்", serv10: "செலவு & இழப்புகள்"
+        },
+        hi: {
+            
+            
+nav_home: "होम", nav_about: "हमारे बारे में", nav_services: "सेवाएँ",
+            nav_gallery: "गैलरी", nav_contact: "संपर्क करें",
+            our_span: "हमारी", services_title: "सेवाएँ", services_breadcrumb: "सेवाएँ",
+            home_breadcrumb: "होम",
+            serv1_title: "सामान्य रिपोर्ट", serv1_desc: "नाड़ी ज्योतिष के आधार पर आपके जीवन पथ का विस्तृत अवलोकन। दिव्य अंतर्दृष्टि के साथ अपने अतीत, वर्तमान और भविष्य को समझें।",
+            serv2_title: "परिवार और वित्त", serv2_desc: "पारिवारिक संबंधों और वित्तीय स्थिरता के लिए मार्गदर्शन। सद्भाव, धन और जीवन संतुलन के समाधान खोजें।",
+            serv3_title: "भाई-बहन और साहस", serv3_desc: "भाई-बहन के रिश्तों और व्यक्तिगत शक्ति में अंतर्दृष्टि। साहस और स्पष्टता के साथ बाधाओं को दूर करें।",
+            serv4_title: "माँ और सुख अध्याय", serv4_desc: "मातृ आशीर्वाद, गृह जीवन और सुख-सुविधाओं का विश्लेषण। संपत्ति, शांति और भावनात्मक कल्याण के बारे में जानें।",
+            serv5_title: "गर्भावस्था", serv5_desc: "प्रसव और माता-पिता की यात्रा के लिए आध्यात्मिक मार्गदर्शन। संभावनाओं, समय और दिव्य आशीर्वाद को समझें।",
+            serv6_title: "ऋण, रोग और मुकदमेबाजी", serv6_desc: "वित्तीय ऋण, स्वास्थ्य समस्याओं और कानूनी मामलों के समाधान। उचित उपाय और मार्गदर्शन से नकारात्मक प्रभावों को कम करें।",
+            serv7_title: "विवाह", serv7_desc: "विवाह का समय, अनुकूलता और बाधाओं के बारे में जानें। सुखी और सफल वैवाहिक जीवन के लिए मार्गदर्शन प्राप्त करें।",
+            serv8_title: "दीर्घायु", serv8_desc: "जीवनकाल, स्वास्थ्य पैटर्न और जीवन के चरणों में अंतर्दृष्टि। एक संतुलित और शांतिपूर्ण जीवन यात्रा के लिए तैयार रहें।",
+            serv9_title: "आध्यात्मिक प्राप्ति और भाग्य", serv9_desc: "अपने आध्यात्मिक पथ और दिव्य आशीर्वादों को खोजें। उपायों और आध्यात्मिक प्रथाओं के माध्यम से भाग्य बढ़ाएं।",
+            serv10_title: "व्यवसाय", serv10_desc: "आपके भाग्य और ग्रहों की स्थिति पर आधारित करियर मार्गदर्शन। सफलता और विकास के लिए सही मार्ग चुनें।",
+            serv11_title: "लाभ और द्वितीय विवाह", serv11_desc: "व्यापार लाभ, मुनाफे और अवसरों को समझें। द्वितीय विवाह की संभावनाओं और परिणामों पर मार्गदर्शन।",
+            serv12_title: "व्यय और हानियाँ", serv12_desc: "वित्तीय नुकसान और अनावश्यक खर्चों का विश्लेषण करें। बचत और स्थिरता में सुधार के लिए उपाय प्राप्त करें।",
+            mobile_label: "मोबाइल", location_label: "स्थान",
+            footer_address: "MIG-5 ग्राउंड फ्लोर, छठा क्रॉस, टीचर्स कॉलोनी, होसुर",
+            follow_us: "फॉलो करें", quick_link: "त्वरित लिंक", our_services: "हमारी सेवाएँ",
+            nav_home: "होम", nav_about: "हमारे बारे में", nav_services: "सेवाएँ",
+            nav_gallery: "गैलरी", nav_contact: "संपर्क करें",
+            serv1: "सामान्य रिपोर्ट", serv2: "परिवार और वित्त", serv3: "भाई-बहन और साहस",
+            serv4: "माँ और सुख", serv5: "ऋण, रोग और मुकदमेबाजी",
+            serv6: "विवाह", serv7: "दीर्घायु", serv8: "आध्यात्मिक प्राप्ति",
+            serv9: "व्यवसाय", serv10: "व्यय और हानियाँ"
+        },
+        kn: {
+            nav_home: "ಮುಖಪುಟ", nav_about: "ನಮ್ಮ ಬಗ್ಗೆ", nav_services: "ಸೇವೆಗಳು",
+            nav_gallery: "ಗ್ಯಾಲರಿ", nav_contact: "ಸಂಪರ್ಕಿಸಿ",
+            our_span: "ನಮ್ಮ", services_title: "ಸೇವೆಗಳು", services_breadcrumb: "ಸೇವೆಗಳು",
+            home_breadcrumb: "ಮುಖಪುಟ",
+            serv1_title: "ಸಾಮಾನ್ಯ ವರದಿ", serv1_desc: "ನಾಡಿ ಜ್ಯೋತಿಷ್ಯದ ಆಧಾರದ ಮೇಲೆ ನಿಮ್ಮ ಜೀವನ ಮಾರ್ಗದ ವಿವರವಾದ ಅವಲೋಕನ. ದೈವಿಕ ಒಳನೋಟಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಹಿಂದಿನ, ವರ್ತಮಾನ ಮತ್ತು ಭವಿಷ್ಯವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.",
+            serv2_title: "ಕುಟುಂಬ & ಹಣಕಾಸು", serv2_desc: "ಕುಟುಂಬ ಸಂಬಂಧಗಳು ಮತ್ತು ಆರ್ಥಿಕ ಸ್ಥಿರತೆಗೆ ಮಾರ್ಗದರ್ಶನ. ಸಾಮರಸ್ಯ, ಸಂಪತ್ತು ಮತ್ತು ಜೀವನ ಸಮತೋಲನಕ್ಕಾಗಿ ಪರಿಹಾರಗಳನ್ನು ಹುಡುಕಿ.",
+            serv3_title: "ಒಡಹುಟ್ಟಿದವರು & ಧೈರ್ಯ", serv3_desc: "ಒಡಹುಟ್ಟಿದವರ ಸಂಬಂಧಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಶಕ್ತಿಯ ಒಳನೋಟಗಳು. ಧೈರ್ಯ ಮತ್ತು ಸ್ಪಷ್ಟತೆಯಿಂದ ಅಡೆತಡೆಗಳನ್ನು ಜಯಿಸಿ.",
+            serv4_title: "ತಾಯಿ & ಸೌಕರ್ಯ ಅಧ್ಯಾಯ", serv4_desc: "ಮಾತೃ ಆಶೀರ್ವಾದ, ಮನೆಯ ಜೀವನ ಮತ್ತು ಸೌಕರ್ಯಗಳ ವಿಶ್ಲೇಷಣೆ. ಆಸ್ತಿ, ಶಾಂತಿ ಮತ್ತು ಭಾವನಾತ್ಮಕ ಯೋಗಕ್ಷೇಮದ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ.",
+            serv5_title: "ಗರ್ಭಧಾರಣೆ", serv5_desc: "ಹೆರಿಗೆ ಮತ್ತು ಪೋಷಕತ್ವದ ಪ್ರಯಾಣಕ್ಕೆ ಆಧ್ಯಾತ್ಮಿಕ ಮಾರ್ಗದರ್ಶನ. ಸಾಧ್ಯತೆಗಳು, ಸಮಯ ಮತ್ತು ದೈವಿಕ ಆಶೀರ್ವಾದಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.",
+            serv6_title: "ಸಾಲ, ರೋಗ & ದಾವೆ", serv6_desc: "ಹಣಕಾಸಿನ ಸಾಲಗಳು, ಆರೋಗ್ಯ ಸಮಸ್ಯೆಗಳು ಮತ್ತು ಕಾನೂನು ವಿಷಯಗಳಿಗೆ ಪರಿಹಾರಗಳು. ಸರಿಯಾದ ಪರಿಹಾರಗಳು ಮತ್ತು ಮಾರ್ಗದರ್ಶನದೊಂದಿಗೆ ನಕಾರಾತ್ಮಕ ಪರಿಣಾಮಗಳನ್ನು ಕಡಿಮೆ ಮಾಡಿ.",
+            serv7_title: "ವಿವಾಹ", serv7_desc: "ಮದುವೆಯ ಸಮಯ, ಹೊಂದಾಣಿಕೆ ಮತ್ತು ಅಡೆತಡೆಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ. ಸಂತೋಷದ ಮತ್ತು ಯಶಸ್ವಿ ವೈವಾಹಿಕ ಜೀವನಕ್ಕಾಗಿ ಮಾರ್ಗದರ್ಶನ ಪಡೆಯಿರಿ.",
+            serv8_title: "ದೀರ್ಘಾಯುಷ್ಯ", serv8_desc: "ಜೀವಿತಾವಧಿ, ಆರೋಗ್ಯ ಮಾದರಿಗಳು ಮತ್ತು ಜೀವನದ ಹಂತಗಳ ಒಳನೋಟಗಳು. ಸಮತೋಲಿತ ಮತ್ತು ಶಾಂತಿಯುತ ಜೀವನ ಪ್ರಯಾಣಕ್ಕಾಗಿ ಸಿದ್ಧಪಡಿಸಿಕೊಳ್ಳಿ.",
+            serv9_title: "ಆಧ್ಯಾತ್ಮಿಕ ಸಾಧನೆ & ಅದೃಷ್ಟಗಳು", serv9_desc: "ನಿಮ್ಮ ಆಧ್ಯಾತ್ಮಿಕ ಮಾರ್ಗ ಮತ್ತು ದೈವಿಕ ಆಶೀರ್ವಾದಗಳನ್ನು ಅನ್ವೇಷಿಸಿ. ಪರಿಹಾರಗಳು ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕ ಆಚರಣೆಗಳ ಮೂಲಕ ಅದೃಷ್ಟವನ್ನು ಹೆಚ್ಚಿಸಿ.",
+            serv10_title: "ವೃತ್ತಿ", serv10_desc: "ನಿಮ್ಮ ಭವಿಷ್ಯ ಮತ್ತು ಗ್ರಹಗಳ ಸ್ಥಾನಗಳ ಆಧಾರದ ಮೇಲೆ ವೃತ್ತಿ ಮಾರ್ಗದರ್ಶನ. ಯಶಸ್ಸು ಮತ್ತು ಬೆಳವಣಿಗೆಗೆ ಸರಿಯಾದ ಮಾರ್ಗವನ್ನು ಆರಿಸಿ.",
+            serv11_title: "ಲಾಭ & ಎರಡನೇ ವಿವಾಹ", serv11_desc: "ವ್ಯಾಪಾರ ಲಾಭಗಳು, ಲಾಭಗಳು ಮತ್ತು ಅವಕಾಶಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ. ಎರಡನೇ ವಿವಾಹದ ಸಾಧ್ಯತೆಗಳು ಮತ್ತು ಫಲಿತಾಂಶಗಳ ಕುರಿತು ಮಾರ್ಗದರ್ಶನ.",
+            serv12_title: "ವೆಚ್ಚ & ನಷ್ಟಗಳು", serv12_desc: "ಹಣಕಾಸಿನ ನಷ್ಟಗಳು ಮತ್ತು ಅನಗತ್ಯ ವೆಚ್ಚಗಳನ್ನು ವಿಶ್ಲೇಷಿಸಿ. ಉಳಿತಾಯ ಮತ್ತು ಸ್ಥಿರತೆಯನ್ನು ಸುಧಾರಿಸಲು ಪರಿಹಾರಗಳನ್ನು ಪಡೆಯಿರಿ.",
+            mobile_label: "ಮೊಬೈಲ್", location_label: "ಸ್ಥಳ",
+            footer_address: "MIG-5 ನೆಲ ಮಹಡಿ, 6 ನೇ ಅಡ್ಡ, ಟೀಚರ್ಸ್ ಕಾಲೋನಿ, ಹೊಸೂರು",
+            follow_us: "ಅನುಸರಿಸಿ", quick_link: "ತ್ವರಿತ ಲಿಂಕ್", our_services: "ನಮ್ಮ ಸೇವೆಗಳು",
+            nav_home: "ಮುಖಪುಟ", nav_about: "ನಮ್ಮ ಬಗ್ಗೆ", nav_services: "ಸೇವೆಗಳು",
+            nav_gallery: "ಗ್ಯಾಲರಿ", nav_contact: "ಸಂಪರ್ಕಿಸಿ",
+            serv1: "ಸಾಮಾನ್ಯ ವರದಿ", serv2: "ಕುಟುಂಬ & ಹಣಕಾಸು", serv3: "ಒಡಹುಟ್ಟಿದವರು & ಧೈರ್ಯ",
+            serv4: "ತಾಯಿ & ಸೌಕರ್ಯ", serv5: "ಸಾಲ, ರೋಗ & ದಾವೆ",
+            serv6: "ವಿವಾಹ", serv7: "ದೀರ್ಘಾಯುಷ್ಯ", serv8: "ಆಧ್ಯಾತ್ಮಿಕ ಸಾಧನೆ",
+            serv9: "ವೃತ್ತಿ", serv10: "ವೆಚ್ಚ & ನಷ್ಟಗಳು"
+        },
+        te: {
+               nav_home: "హోమ్", nav_about: "మా గురించి", nav_services: "సేవలు",
+            nav_gallery: "గ్యాలరీ", nav_contact: "సంప్రదించండి",
+            our_span: "మా", services_title: "సేవలు", services_breadcrumb: "సేవలు",
+            home_breadcrumb: "హోమ్",
+            serv1_title: "సాధారణ నివేదిక", serv1_desc: "నాడి జ్యోతిష్యం ఆధారంగా మీ జీవిత మార్గం యొక్క వివరణాత్మక అవలోకనం. దైవిక అంతర్దృష్టితో మీ గతం, వర్తమానం మరియు భవిష్యత్తును అర్థం చేసుకోండి.",
+            serv2_title: "కుటుంబం & ఫైనాన్స్", serv2_desc: "కుటుంబ సంబంధాలు మరియు ఆర్థిక స్థిరత్వానికి మార్గదర్శకత్వం. సామరస్యం, సంపద మరియు జీవిత సమతుల్యతకు పరిష్కారాలను కనుగొనండి.",
+            serv3_title: "తోబుట్టువులు & ధైర్యం", serv3_desc: "తోబుట్టువుల సంబంధాలు మరియు వ్యక్తిగత బలంపై అంతర్దృష్టి. ధైర్యంతో మరియు స్పష్టతతో అడ్డంకులను అధిగమించండి.",
+            serv4_title: "తల్లి & సౌకర్యాలు అధ్యాయం", serv4_desc: "మాతృ ఆశీర్వాదాలు, గృహ జీవితం మరియు సౌకర్యాల విశ్లేషణ. ఆస్తి, శాంతి మరియు భావోద్వేగ శ్రేయస్సు గురించి తెలుసుకోండి.",
+            serv5_title: "గర్భధారణ", serv5_desc: "ప్రసవం మరియు తల్లిదండ్రుల ప్రయాణానికి ఆధ్యాత్మిక మార్గదర్శకత్వం. అవకాశాలు, సమయం మరియు దైవిక ఆశీర్వాదాలను అర్థం చేసుకోండి.",
+            serv6_title: "అప్పులు, వ్యాధి & దావా", serv6_desc: "ఆర్థిక అప్పులు, ఆరోగ్య సమస్యలు మరియు చట్టపరమైన విషయాలకు పరిష్కారాలు. సరైన పరిహారాలు మరియు మార్గదర్శకత్వంతో ప్రతికూల ప్రభావాలను తగ్గించండి.",
+            serv7_title: "వివాహం", serv7_desc: "వివాహ సమయం, అనుకూలత మరియు అడ్డంకుల గురించి తెలుసుకోండి. సంతోషకరమైన మరియు విజయవంతమైన వైవాహిక జీవితానికి మార్గదర్శకత్వం పొందండి.",
+            serv8_title: "దీర్ఘాయువు", serv8_desc: "జీవితకాలం, ఆరోగ్య నమూనాలు మరియు జీవిత దశలపై అంతర్దృష్టి. సమతుల్య మరియు ప్రశాంతమైన జీవిత ప్రయాణానికి సిద్ధపడండి.",
+            serv9_title: "ఆధ్యాత్మిక సాధన & అదృష్టాలు", serv9_desc: "మీ ఆధ్యాత్మిక మార్గం మరియు దైవిక ఆశీర్వాదాలను కనుగొనండి. పరిహారాలు మరియు ఆధ్యాత్మిక అభ్యాసాల ద్వారా అదృష్టాన్ని మెరుగుపరచండి.",
+            serv10_title: "వృత్తి", serv10_desc: "మీ విధి మరియు గ్రహ స్థానాల ఆధారంగా కెరీర్ మార్గదర్శకత్వం. విజయం మరియు వృద్ధికి సరైన మార్గాన్ని ఎంచుకోండి.",
+            serv11_title: "లాభాలు & రెండవ వివాహం", serv11_desc: "వ్యాపార లాభాలు, లాభాలు మరియు అవకాశాలను అర్థం చేసుకోండి. రెండవ వివాహ అవకాశాలు మరియు ఫలితాలపై మార్గదర్శకత్వం.",
+            serv12_title: "ఖర్చు & నష్టాలు", serv12_desc: "ఆర్థిక నష్టాలు మరియు అనవసర ఖర్చులను విశ్లేషించండి. పొదుపు మరియు స్థిరత్వాన్ని మెరుగుపరచడానికి పరిహారాలు పొందండి.",
+            mobile_label: "మొబైల్", location_label: "ప్రదేశం",
+            footer_address: "MIG-5 గ్రౌండ్ ఫ్లోర్, 6వ క్రాస్, టీచర్స్ కాలనీ, హోసూర్",
+            follow_us: "ఫాలో అవ్వండి", quick_link: "త్వరిత లింక్", our_services: "మా సేవలు",
+            nav_home: "హోమ్", nav_about: "మా గురించి", nav_services: "సేవలు",
+            nav_gallery: "గ్యాలరీ", nav_contact: "సంప్రదించండి",
+            serv1: "సాధారణ నివేదిక", serv2: "కుటుంబం & ఫైనాన్స్", serv3: "తోబుట్టువులు & ధైర్యం",
+            serv4: "తల్లి & సౌకర్యాలు", serv5: "అప్పులు, వ్యాధి & దావా",
+            serv6: "వివాహం", serv7: "దీర్ఘాయువు", serv8: "ఆధ్యాత్మిక సాధన",
+            serv9: "వృత్తి", serv10: "ఖర్చు & నష్టాలు"
+        }
+    };
 
-  toggleBtn.addEventListener("click", () => {
-    enquiryBox.style.display =
-      enquiryBox.style.display === "block" ? "none" : "block";
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".floating-contact")) {
-      enquiryBox.style.display = "none";
+    // Function to apply translation
+    function setLanguage(lang) {
+        const t = translations[lang];
+        if (!t) return;
+        
+        // Update all elements with data-key attribute
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key]) {
+                el.textContent = t[key];
+            }
+        });
+        
+        // Save to localStorage
+        localStorage.setItem('preferred_language', lang);
+        
+        // Update active button style
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
     }
-  });
-  toggleBtn.addEventListener("click", () => {
-  enquiryBox.classList.toggle("show");
-});
-</script>
+
+    // Add click event to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+
+    // Load saved language on page load
+    const savedLang = localStorage.getItem('preferred_language');
+    if (savedLang && translations[savedLang]) {
+        setLanguage(savedLang);
+    } else {
+        setLanguage('en');
+    }
+    </script>
+    
+    <script>
+    const toggleBtn = document.getElementById("callToggle");
+    const enquiryBox = document.getElementById("enquiryBox");
+
+    toggleBtn.addEventListener("click", () => {
+        enquiryBox.style.display = enquiryBox.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".floating-contact")) {
+            enquiryBox.style.display = "none";
+        }
+    });
+    toggleBtn.addEventListener("click", () => {
+        enquiryBox.classList.toggle("show");
+    });
+    </script>
 </body>
 
 <!-- Mirrored from html.awaikenthemes.com/lenity/services.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 May 2026 11:43:58 GMT -->
