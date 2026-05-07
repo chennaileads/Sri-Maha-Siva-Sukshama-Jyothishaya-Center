@@ -41,7 +41,6 @@
   right: 20px;
   bottom: 30px;
   z-index: 9999;
-
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -55,25 +54,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 22px;
   color: #fff;
   text-decoration: none;
-
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   transition: all 0.3s ease;
   position: relative;
 }
 
 /* WhatsApp (Official Green) */
-.whatsapp {
-  background: #25D366;
-}
-
+.whatsapp { background: #25D366; }
 /* Call (Professional Red) */
-.call {
-  background: #E53935;
-}
+.call { background: #E53935; }
 
 /* Hover Effects */
 .contact-btn:hover {
@@ -82,13 +74,8 @@
 }
 
 /* Glow Effect */
-.whatsapp:hover {
-  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
-}
-
-.call:hover {
-  box-shadow: 0 0 15px rgba(229, 57, 53, 0.6);
-}
+.whatsapp:hover { box-shadow: 0 0 15px rgba(37, 211, 102, 0.6); }
+.call:hover { box-shadow: 0 0 15px rgba(229, 57, 53, 0.6); }
 
 /* Floating Animation */
 @keyframes floatY {
@@ -97,29 +84,106 @@
   100% { transform: translateY(0); }
 }
 
-.contact-btn {
+.contact-btn { animation: floatY 3s ease-in-out infinite; }
+.call { animation-delay: 1.5s; }
+
+/* ========== STICKY LANGUAGE BUTTONS WITH TEXT (LEFT SIDE) ========== */
+.floating-language {
+  position: fixed;
+  left: 20px;
+  bottom: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: #2c3e50;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   animation: floatY 3s ease-in-out infinite;
 }
 
-.call {
-  animation-delay: 1.5s;
+.lang-btn:hover {
+  transform: scale(1.05);
+  background: #1a252f;
+}
+
+.lang-btn.active {
+  background: #f5a623;
+  color: #fff;
+}
+
+.lang-flag { font-size: 18px; }
+
+/* Different animation delays */
+.lang-btn:nth-child(1) { animation-delay: 0s; }
+.lang-btn:nth-child(2) { animation-delay: 0.1s; }
+.lang-btn:nth-child(3) { animation-delay: 0.2s; }
+.lang-btn:nth-child(4) { animation-delay: 0.3s; }
+.lang-btn:nth-child(5) { animation-delay: 0.4s; }
+
+@media (max-width: 768px) {
+  .floating-language {
+    left: 8px;
+    bottom: 20px;
+    gap: 6px;
+  }
+  .lang-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+  .lang-flag { font-size: 14px; }
 }
 </style>
 <body>
 
     <div class="floating-contact">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919052732598" target="_blank" class="contact-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <!-- Call -->
+        <a href="tel:+919961343298" class="contact-btn call">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
 
-  <!-- WhatsApp -->
-  <a href="https://wa.me/919052732598" target="_blank" class="contact-btn whatsapp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- Call -->
-  <a href="tel:+919961343298" class="contact-btn call">
-    <i class="fas fa-phone"></i>
-  </a>
-
-</div>
+    <!-- ========== STICKY LANGUAGE BUTTONS (LEFT SIDE) ========== -->
+    <div class="floating-language">
+        <button class="lang-btn" data-lang="en">
+            <span class="lang-flag">🇬🇧</span>
+            <span>ENGLISH</span>
+        </button>
+        <button class="lang-btn" data-lang="ta">
+            <span class="lang-flag">🇮🇳</span>
+            <span>தமிழ்</span>
+        </button>
+        <button class="lang-btn" data-lang="hi">
+            <span class="lang-flag">🇮🇳</span>
+            <span>हिन्दी</span>
+        </button>
+        <button class="lang-btn" data-lang="kn">
+            <span class="lang-flag">🇮🇳</span>
+            <span>ಕನ್ನಡ</span>
+        </button>
+        <button class="lang-btn" data-lang="te">
+            <span class="lang-flag">🇮🇳</span>
+            <span>తెలుగు</span>
+        </button>
+    </div>
 
     <!-- Header Start -->
 	<header class="main-header">
@@ -135,20 +199,14 @@
 					<!-- Main Menu Start -->
 					<div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
-                            <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item "><a class="nav-link" href="index.html">Home</a>
-                                   
-                                </li>                                
-                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a>
-                                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="image-gallery.html">Gallery</a></li>
-                              
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>                         
+                             <ul class="navbar-nav mr-auto" id="menu">
+                                <li class="nav-item "><a class="nav-link trans-text" data-key="nav_home" href="index.html">Home</a></li>                                
+                                <li class="nav-item"><a class="nav-link trans-text" data-key="nav_about" href="about.html">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link trans-text" data-key="nav_services" href="services.html">Services</a></li>
+                                <li class="nav-item"><a class="nav-link trans-text" data-key="nav_gallery" href="image-gallery.html">Gallery</a></li>
+                                <li class="nav-item"><a class="nav-link trans-text" data-key="nav_contact" href="contact.html">Contact Us</a></li>                         
                             </ul>
                         </div>
-                        <!-- Contact Now Box Start -->
-                      
-                        <!-- Contact Now Box End -->
 					</div>
 					<!-- Main Menu End -->
 					<div class="navbar-toggle"></div>
@@ -166,11 +224,11 @@
                 <div class="col-lg-12">
                     <!-- Page Header Box Start -->
                     <div class="page-header-box">
-                        <h1 class="text-anime-style-2" data-cursor="-opaque"><span>Gallery</span> </h1>
+                        <h1 class="text-anime-style-2" data-cursor="-opaque"><span class="trans-text" data-key="gallery_title">Gallery</span></h1>
                         <nav class="wow fadeInUp">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+                                <li class="breadcrumb-item"><a href="index.html" class="trans-text" data-key="home_breadcrumb">home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span class="trans-text" data-key="gallery_breadcrumb">Gallery</span></li>
                             </ol>
                         </nav>
                     </div>
@@ -187,7 +245,6 @@
             <!-- gallery section start -->
             <div class="row gallery-items page-gallery-box">
                 <div class="col-lg-4 col-6">
-                    <!-- image gallery start -->
                     <div class="photo-gallery wow fadeInUp">
                         <a href="images/g1.jpeg" data-cursor-text="View">
                             <figure class="image-anime">
@@ -195,11 +252,9 @@
                             </figure>
                         </a>
                     </div>
-                    <!-- image gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- image gallery start -->
                     <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
                         <a href="images/g2.jpeg" data-cursor-text="View">
                             <figure class="image-anime">
@@ -207,11 +262,9 @@
                             </figure>
                         </a>
                     </div>
-                    <!-- image gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- image gallery start -->
                     <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
                         <a href="images/g4.jpeg" data-cursor-text="View">
                             <figure class="image-anime">
@@ -219,11 +272,9 @@
                             </figure>
                         </a>
                     </div>
-                    <!-- image gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- image gallery start -->
                     <div class="photo-gallery wow fadeInUp" data-wow-delay="0.6s">
                         <a href="images/g6.jpeg" data-cursor-text="View">
                             <figure class="image-anime">
@@ -231,11 +282,9 @@
                             </figure>
                         </a>
                     </div>
-                    <!-- image gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- image gallery start -->
                     <div class="photo-gallery wow fadeInUp" data-wow-delay="0.8s">
                         <a href="images/g3.jpeg" data-cursor-text="View">
                             <figure class="image-anime">
@@ -243,11 +292,9 @@
                             </figure>
                         </a>
                     </div>
-                    <!-- image gallery end -->
                 </div>
 
-                   <div class="col-lg-4 col-6">
-                    <!-- image gallery start -->
+                <div class="col-lg-4 col-6">
                     <div class="photo-gallery wow fadeInUp" data-wow-delay="0.8s">
                         <a href="images/g5.jpeg" data-cursor-text="View">
                             <figure class="image-anime">
@@ -255,16 +302,14 @@
                             </figure>
                         </a>
                     </div>
-                    <!-- image gallery end -->
                 </div>
-
             </div>
             <!-- gallery section end -->
         </div>
     </div>
     <!-- Photo Gallery Section End -->
 
-       <!-- Main Footer Section Start -->
+    <!-- Main Footer Section Start -->
     <footer class="main-footer">
         <div class="container">
             <div class="row">
@@ -282,25 +327,22 @@
                             <!-- Footer Contact Detail Start -->
                             <div class="footer-contact-detail">
                                 <div class="footer-contact-item">
-                                    <p>Mobile</p>
+                                    <p class="trans-text" data-key="mobile_label">Mobile</p>
                                     <h3><a href="tel:+919052732598">+91 90527 32598</a></h3>
                                     <h3><a href="tel:+919961343298">+91 99613 43298</a></h3>
                                 </div>
                                 
                                 <div class="footer-contact-item">
-                                    <p>Location</p>
-                                    <h3><a href="#">MIG-5 Ground Floor
-6th Cross
-Teachers Colony Hosur</a></h3>
+                                    <p class="trans-text" data-key="location_label">Location</p>
+                                    <h3><a href="#" class="trans-text" data-key="footer_address">MIG-5 Ground Floor 6th Cross Teachers Colony Hosur</a></h3>
                                 </div>
                             </div>
                             <!-- Footer Contact Detail End -->
                             
                             <!-- Footer Social Links Start -->
                             <div class="footer-social-links">
-                                <h3>Follow on</h3>
+                                <h3 class="trans-text" data-key="follow_us">Follow on</h3>
                                 <ul>
-                                    
                                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>                                    								
                                 </ul>
@@ -311,49 +353,36 @@ Teachers Colony Hosur</a></h3>
 
                         <!-- Footer Links Box Start -->
                         <div class="footer-links-box">
-                            <!-- Newsletter Form Start -->
-                            <!-- <div class="newsletter-form">
-                                <form id="newsletterForm" action="#" method="POST">
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control" id="mail" placeholder="Enter Your Email" required="">
-                                        <button type="submit" class="newsletter-btn"><i class="fa-regular fa-paper-plane"></i></button>
-                                    </div>
-                                </form>
-                            </div> -->
-                            <!-- Newsletter Form End -->
-
                             <!-- Footer Links Start -->
                             <div class="footer-links">
-                                <h3>Quick link</h3>
+                                <h3 class="trans-text" data-key="quick_link">Quick link</h3>
                                 <ul>
-                                    <li><a href="index.html">home</a></li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="services.html">services</a></li>
-                                    <li><a href="image-gallery.html">Gallery</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="index.html" class="trans-text" data-key="nav_home">home</a></li>
+                                    <li><a href="about.html" class="trans-text" data-key="nav_about">About us</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="nav_services">services</a></li>
+                                    <li><a href="image-gallery.html" class="trans-text" data-key="nav_gallery">Gallery</a></li>
+                                    <li><a href="contact.html" class="trans-text" data-key="nav_contact">Contact Us</a></li>
                                 </ul>
                             </div>
                             <!-- Footer Links End -->
                             
                             <!-- Footer Links Start -->
                             <div class="footer-links footer-service-links">
-                                <h3>Our Services</h3>
+                                <h3 class="trans-text" data-key="our_services">Our Services</h3>
                                 <ul>
-                                    <li><a href="services.html">Generalized Report</a></li>
-                                    <li><a href="services.html">Family & Finance</a></li>
-                                    <li><a href="services.html">Siblings & Courage</a></li>
-                                    <li><a href="services.html">Mother & Comforts Chapter</a></li>
-                                    <li><a href="services.html">Debts, Disease & Litigation</a></li>
-                                    <li><a href="services.html">Marriage</a></li>
-                                    <li><a href="services.html">Longevity</a></li>
-                                    <li><a href="services.html">Spiritual Attainment & Fortunes</a></li>
-                                    <li><a href="services.html">Profession</a></li>
-                                    <li><a href="services.html">Expenditure & Losses</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv1">Generalized Report</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv2">Family & Finance</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv3">Siblings & Courage</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv4">Mother & Comforts Chapter</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv5">Debts, Disease & Litigation</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv6">Marriage</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv7">Longevity</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv8">Spiritual Attainment & Fortunes</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv9">Profession</a></li>
+                                    <li><a href="services.html" class="trans-text" data-key="serv10">Expenditure & Losses</a></li>
                                 </ul>
                             </div>
-                            <!-- Footer Links End -->
-                            
-                            
+                            <!-- Footer Links End -->                            
                         </div>
                         <!-- Footer Links Box End -->
                     </div>
@@ -369,12 +398,12 @@ Teachers Colony Hosur</a></h3>
                     <div class="col-md-12">
                         <!-- Copyright Text Start -->
                         <div class="copyright-text">
-    <p>
-        Copyright © <script>document.write(new Date().getFullYear())</script> 
-        Sri Maha Siva Sukshama Jyothishaya Center. All Rights Reserved. 
-        Developed by <a href="https://chennaileads.com" target="_blank">chennaileads.com</a>
-    </p>
-</div>
+                            <p>
+                                Copyright © <script>document.write(new Date().getFullYear())</script> 
+                                Sri Maha Siva Sukshama Jyothishaya Center. All Rights Reserved. 
+                                Developed by <a href="https://chennaileads.com" target="_blank">chennaileads.com</a>
+                            </p>
+                        </div>
                         <!-- Copyright Text End -->
                     </div>
                 </div>
@@ -417,24 +446,143 @@ Teachers Colony Hosur</a></h3>
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
-      <script>
-  const toggleBtn = document.getElementById("callToggle");
-  const enquiryBox = document.getElementById("enquiryBox");
+    
+    <!-- ========== WORKING TRANSLATION SCRIPT ========== -->
+    <script>
+    // Complete translations for 5 languages
+    const translations = {
+        en: {
+            gallery_title: "Gallery", gallery_breadcrumb: "Gallery",
+            home_breadcrumb: "home", contact_breadcrumb: "contact us",
+            mobile_label: "Mobile", location_label: "Location",
+            footer_address: "MIG-5 Ground Floor, 6th Cross, Teachers Colony, Hosur",
+            follow_us: "Follow on", quick_link: "Quick link", our_services: "Our Services",
+            nav_home: "home", nav_about: "About us", nav_services: "services",
+            nav_gallery: "Gallery", nav_contact: "Contact Us",
+            serv1: "Generalized Report", serv2: "Family & Finance",
+            serv3: "Siblings & Courage", serv4: "Mother & Comforts Chapter",
+            serv5: "Debts, Disease & Litigation", serv6: "Marriage",
+            serv7: "Longevity", serv8: "Spiritual Attainment & Fortunes",
+            serv9: "Profession", serv10: "Expenditure & Losses"
+        },
+        ta: {
+            gallery_title: "புகைப்பட தொகுப்பு", gallery_breadcrumb: "புகைப்பட தொகுப்பு",
+            home_breadcrumb: "முகப்பு", contact_breadcrumb: "தொடர்பு",
+            mobile_label: "அலைபேசி", location_label: "இருப்பிடம்",
+            footer_address: "MIG-5 தரை தளம், 6வது குறுக்கு சாலை, ஆசிரியர் காலனி, ஹோசூர்",
+            follow_us: "பின்தொடரவும்", quick_link: "விரைவு இணைப்புகள்", our_services: "எங்கள் சேவைகள்",
+            nav_home: "முகப்பு", nav_about: "எங்களை பற்றி", nav_services: "சேவைகள்",
+            nav_gallery: "கேலரி", nav_contact: "தொடர்பு",
+            serv1: "பொது அறிக்கை", serv2: "குடும்பம் & நிதி",
+            serv3: "உடன்பிறப்புகள் & தைரியம்", serv4: "தாய் & ஆறுதல்",
+            serv5: "கடன், நோய் & வழக்கு", serv6: "திருமணம்",
+            serv7: "நீண்ட ஆயுள்", serv8: "ஆன்மீகம் & அதிர்ஷ்டங்கள்",
+            serv9: "தொழில்", serv10: "செலவு & இழப்புகள்"
+        },
+        hi: {
+            gallery_title: "गैलरी", gallery_breadcrumb: "गैलरी",
+            home_breadcrumb: "होम", contact_breadcrumb: "संपर्क करें",
+            mobile_label: "मोबाइल", location_label: "स्थान",
+            footer_address: "MIG-5 ग्राउंड फ्लोर, छठा क्रॉस, टीचर्स कॉलोनी, होसुर",
+            follow_us: "फॉलो करें", quick_link: "त्वरित लिंक", our_services: "हमारी सेवाएँ",
+            nav_home: "होम", nav_about: "हमारे बारे में", nav_services: "सेवाएँ",
+            nav_gallery: "गैलरी", nav_contact: "संपर्क करें",
+            serv1: "सामान्य रिपोर्ट", serv2: "परिवार और वित्त",
+            serv3: "भाई-बहन और साहस", serv4: "माँ और सुख",
+            serv5: "ऋण, रोग और मुकदमेबाजी", serv6: "विवाह",
+            serv7: "दीर्घायु", serv8: "आध्यात्मिक प्राप्ति",
+            serv9: "व्यवसाय", serv10: "व्यय और हानियाँ"
+        },
+        kn: {
+            gallery_title: "ಗ್ಯಾಲರಿ", gallery_breadcrumb: "ಗ್ಯಾಲರಿ",
+            home_breadcrumb: "ಮುಖಪುಟ", contact_breadcrumb: "ಸಂಪರ್ಕಿಸಿ",
+            mobile_label: "ಮೊಬೈಲ್", location_label: "ಸ್ಥಳ",
+            footer_address: "MIG-5 ನೆಲ ಮಹಡಿ, 6 ನೇ ಅಡ್ಡ, ಟೀಚರ್ಸ್ ಕಾಲೋನಿ, ಹೊಸೂರು",
+            follow_us: "ಅನುಸರಿಸಿ", quick_link: "ತ್ವರಿತ ಲಿಂಕ್", our_services: "ನಮ್ಮ ಸೇವೆಗಳು",
+            nav_home: "ಮುಖಪುಟ", nav_about: "ನಮ್ಮ ಬಗ್ಗೆ", nav_services: "ಸೇವೆಗಳು",
+            nav_gallery: "ಗ್ಯಾಲರಿ", nav_contact: "ಸಂಪರ್ಕಿಸಿ",
+            serv1: "ಸಾಮಾನ್ಯ ವರದಿ", serv2: "ಕುಟುಂಬ & ಹಣಕಾಸು",
+            serv3: "ಒಡಹುಟ್ಟಿದವರು & ಧೈರ್ಯ", serv4: "ತಾಯಿ & ಸೌಕರ್ಯ",
+            serv5: "ಸಾಲ, ರೋಗ & ದಾವೆ", serv6: "ವಿವಾಹ",
+            serv7: "ದೀರ್ಘಾಯುಷ್ಯ", serv8: "ಆಧ್ಯಾತ್ಮಿಕ ಸಾಧನೆ",
+            serv9: "ವೃತ್ತಿ", serv10: "ವೆಚ್ಚ & ನಷ್ಟಗಳು"
+        },
+        te: {
+            gallery_title: "గ్యాలరీ", gallery_breadcrumb: "గ్యాలరీ",
+            home_breadcrumb: "హోమ్", contact_breadcrumb: "సంప్రదించండి",
+            mobile_label: "మొబైల్", location_label: "ప్రదేశం",
+            footer_address: "MIG-5 గ్రౌండ్ ఫ్లోర్, 6వ క్రాస్, టీచర్స్ కాలనీ, హోసూర్",
+            follow_us: "ఫాలో అవ్వండి", quick_link: "త్వరిత లింక్", our_services: "మా సేవలు",
+            nav_home: "హోమ్", nav_about: "మా గురించి", nav_services: "సేవలు",
+            nav_gallery: "గ్యాలరీ", nav_contact: "సంప్రదించండి",
+            serv1: "సాధారణ నివేదిక", serv2: "కుటుంబం & ఫైనాన్స్",
+            serv3: "తోబుట్టువులు & ధైర్యం", serv4: "తల్లి & సౌకర్యాలు",
+            serv5: "అప్పులు, వ్యాధి & దావా", serv6: "వివాహం",
+            serv7: "దీర్ఘాయువు", serv8: "ఆధ్యాత్మిక సాధన",
+            serv9: "వృత్తి", serv10: "ఖర్చు & నష్టాలు"
+        }
+    };
 
-  toggleBtn.addEventListener("click", () => {
-    enquiryBox.style.display =
-      enquiryBox.style.display === "block" ? "none" : "block";
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".floating-contact")) {
-      enquiryBox.style.display = "none";
+    // Function to apply translation
+    function setLanguage(lang) {
+        const t = translations[lang];
+        if (!t) return;
+        
+        // Update all elements with data-key attribute
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key]) {
+                el.textContent = t[key];
+            }
+        });
+        
+        // Save to localStorage
+        localStorage.setItem('preferred_language', lang);
+        
+        // Update active button style
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
     }
-  });
-  toggleBtn.addEventListener("click", () => {
-  enquiryBox.classList.toggle("show");
-});
-</script>
+
+    // Add click event to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+
+    // Load saved language on page load
+    const savedLang = localStorage.getItem('preferred_language');
+    if (savedLang && translations[savedLang]) {
+        setLanguage(savedLang);
+    } else {
+        setLanguage('en');
+    }
+    </script>
+    
+    <script>
+    const toggleBtn = document.getElementById("callToggle");
+    const enquiryBox = document.getElementById("enquiryBox");
+
+    toggleBtn.addEventListener("click", () => {
+        enquiryBox.style.display = enquiryBox.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".floating-contact")) {
+            enquiryBox.style.display = "none";
+        }
+    });
+    toggleBtn.addEventListener("click", () => {
+        enquiryBox.classList.toggle("show");
+    });
+    </script>
 </body>
 
 <!-- Mirrored from html.awaikenthemes.com/lenity/image-gallery.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 May 2026 11:44:05 GMT -->
