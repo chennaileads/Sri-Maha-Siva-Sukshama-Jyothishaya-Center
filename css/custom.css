@@ -2884,7 +2884,7 @@ header.main-header .header-sticky.active{
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	max-width: 970px;
+	/* max-width: 970px; */
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px 80px;
