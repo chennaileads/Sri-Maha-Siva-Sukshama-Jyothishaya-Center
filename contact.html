@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<!-- Mirrored from html.awaikenthemes.com/lenity/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 May 2026 11:43:54 GMT -->
+<!-- Mirrored from html.awaikenthemes.com/lenity/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 May 2026 11:44:06 GMT -->
 <head>
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -36,11 +36,21 @@
 	<link href="css/custom.css" rel="stylesheet" media="screen">
 </head>
 <style>
+    .contact-info-box {
+    gap: 30px;
+}
+
+.contact-info-item {
+    flex: 1;
+    min-width: 280px;
+}
+
     .floating-contact {
   position: fixed;
   right: 20px;
   bottom: 30px;
   z-index: 9999;
+
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -54,18 +64,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 22px;
   color: #fff;
   text-decoration: none;
+
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   transition: all 0.3s ease;
   position: relative;
 }
 
 /* WhatsApp (Official Green) */
-.whatsapp { background: #25D366; }
+.whatsapp {
+  background: #25D366;
+}
+
 /* Call (Professional Red) */
-.call { background: #E53935; }
+.call {
+  background: #E53935;
+}
 
 /* Hover Effects */
 .contact-btn:hover {
@@ -74,8 +91,13 @@
 }
 
 /* Glow Effect */
-.whatsapp:hover { box-shadow: 0 0 15px rgba(37, 211, 102, 0.6); }
-.call:hover { box-shadow: 0 0 15px rgba(229, 57, 53, 0.6); }
+.whatsapp:hover {
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+}
+
+.call:hover {
+  box-shadow: 0 0 15px rgba(229, 57, 53, 0.6);
+}
 
 /* Floating Animation */
 @keyframes floatY {
@@ -84,10 +106,15 @@
   100% { transform: translateY(0); }
 }
 
-.contact-btn { animation: floatY 3s ease-in-out infinite; }
-.call { animation-delay: 1.5s; }
+.contact-btn {
+  animation: floatY 3s ease-in-out infinite;
+}
 
-/* ========== STICKY LANGUAGE BUTTONS WITH TEXT (LEFT SIDE) ========== */
+.call {
+  animation-delay: 1.5s;
+}
+
+/* ========== STICKY LANGUAGE BUTTONS WITH TEXT ========== */
 .floating-language {
   position: fixed;
   left: 20px;
@@ -126,7 +153,9 @@
   color: #fff;
 }
 
-.lang-flag { font-size: 18px; }
+.lang-flag {
+  font-size: 18px;
+}
 
 /* Different animation delays */
 .lang-btn:nth-child(1) { animation-delay: 0s; }
@@ -145,46 +174,53 @@
     padding: 5px 10px;
     font-size: 10px;
   }
-  .lang-flag { font-size: 14px; }
+  .lang-flag {
+    font-size: 14px;
+  }
 }
 </style>
 <body>
- <div class="floating-contact">
+
+   <div class="floating-contact">
+
   <!-- WhatsApp -->
   <a href="https://wa.me/919052732598" target="_blank" class="contact-btn whatsapp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
   <!-- Call -->
   <a href="tel:+919961343298" class="contact-btn call">
     <i class="fas fa-phone"></i>
   </a>
+
 </div>
 
 <!-- ========== STICKY LANGUAGE BUTTONS (LEFT SIDE) ========== -->
 <div class="floating-language">
-    <button class="lang-btn" data-lang="en">
-        <span class="lang-flag">🇬🇧</span>
-        <span>ENGLISH</span>
-    </button>
-    <button class="lang-btn" data-lang="ta">
-        <span class="lang-flag">🇮🇳</span>
-        <span>தமிழ்</span>
-    </button>
-    <button class="lang-btn" data-lang="hi">
-        <span class="lang-flag">🇮🇳</span>
-        <span>हिन्दी</span>
-    </button>
-    <button class="lang-btn" data-lang="kn">
-        <span class="lang-flag">🇮🇳</span>
-        <span>ಕನ್ನಡ</span>
-    </button>
-    <button class="lang-btn" data-lang="te">
-        <span class="lang-flag">🇮🇳</span>
-        <span>తెలుగు</span>
-    </button>
+  <button class="lang-btn" data-lang="en">
+    <span class="lang-flag">🇬🇧</span>
+    <span>ENGLISH</span>
+  </button>
+  <button class="lang-btn" data-lang="ta">
+    <span class="lang-flag">🇮🇳</span>
+    <span>தமிழ்</span>
+  </button>
+  <button class="lang-btn" data-lang="hi">
+    <span class="lang-flag">🇮🇳</span>
+    <span>हिन्दी</span>
+  </button>
+  <button class="lang-btn" data-lang="kn">
+    <span class="lang-flag">🇮🇳</span>
+    <span>ಕನ್ನಡ</span>
+  </button>
+  <button class="lang-btn" data-lang="te">
+    <span class="lang-flag">🇮🇳</span>
+    <span>తెలుగు</span>
+  </button>
 </div>
-   
-  <!-- Header Start -->
+
+ 
+    <!-- Header Start -->
 	<header class="main-header">
 		<div class="header-sticky">
 			<nav class="navbar navbar-expand-lg">
@@ -198,7 +234,7 @@
 					<!-- Main Menu Start -->
 					<div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
-                           <ul class="navbar-nav mr-auto" id="menu">
+                            <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item "><a class="nav-link trans-text" data-key="nav_home" href="index.html">Home</a></li>                                
                                 <li class="nav-item"><a class="nav-link trans-text" data-key="nav_about" href="about.html">About Us</a></li>
                                 <li class="nav-item"><a class="nav-link trans-text" data-key="nav_services" href="services.html">Services</a></li>
@@ -206,6 +242,9 @@
                                 <li class="nav-item"><a class="nav-link trans-text" data-key="nav_contact" href="contact.html">Contact Us</a></li>                         
                             </ul>
                         </div>
+                        <!-- Contact Now Box Start -->
+                      
+                        <!-- Contact Now Box End -->
 					</div>
 					<!-- Main Menu End -->
 					<div class="navbar-toggle"></div>
@@ -223,11 +262,11 @@
                 <div class="col-lg-12">
                     <!-- Page Header Box Start -->
                     <div class="page-header-box">
-                        <h1 class="text-anime-style-2" data-cursor="-opaque"> <span class="trans-text" data-key="about_span">About</span> <span class="trans-text" data-key="us_span">us</span></h1>
+                        <h1 class="text-anime-style-2" data-cursor="-opaque"><span class="trans-text" data-key="contact_span">Contact</span> <span class="trans-text" data-key="contact_us_text">us</span></h1>
                         <nav class="wow fadeInUp">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html" class="trans-text" data-key="home_breadcrumb">home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><span class="trans-text" data-key="about_breadcrumb">about us</span></li>
+                                <li class="breadcrumb-item active" aria-current="page"><span class="trans-text" data-key="contact_breadcrumb">contact us</span></li>
                             </ol>
                         </nav>
                     </div>
@@ -238,279 +277,117 @@
     </div>
     <!-- Page Header End -->
 
-  <!-- About Us Section Start -->
-<div class="about-us">
-    <div class="container">
-        <div class="row align-items-center">
+    <!-- Page Contact Us Start -->
+    <div class="page-contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Contact Info Box Start -->
+                    <div class="contact-info-box d-flex flex-wrap justify-content-between">
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item wow fadeInUp d-flex align-items-start mb-4">
+                            <div class="icon-box me-3">
+                                <img src="images/icon-phone-primary.svg" alt="">
+                            </div>
+                            <div class="contact-info-content">
+                                <h3 class="trans-text" data-key="contact_heading">contact us</h3>
+                                <p><a href="tel:+919052732598">+91 90527 32598</a></p>
+                                <p><a href="tel:+919961343298">+91 99613 43298</a></p>
+                            </div>
+                        </div>
+                        <!-- Contact Info Item End -->
 
-            <div class="col-lg-6">
-                <!-- About Us Images Start -->
-                <div class="about-us-images">
-
-                    <div class="about-img-1">
-                        <figure class="image-anime">
-                            <img src="images/g2.jpeg" alt="Nadi Astrology">
-                        </figure>
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item wow fadeInUp d-flex align-items-start mb-4" data-wow-delay="0.4s">
+                            <div class="icon-box me-3">
+                                <img src="images/icon-location.svg" alt="">
+                            </div>
+                            <div class="contact-info-content">
+                                <h3 class="trans-text" data-key="location_heading">location</h3>
+                                <p class="trans-text" data-key="address_text">MIG-5 Ground Floor 6th Cross Teachers Colony Hosur</p>
+                            </div>
+                        </div>
+                        <!-- Contact Info Item End -->
                     </div>
-
-                    <div class="about-img-2">
-                        <figure class="image-anime">
-                            <img src="images/a1.jpg" alt="Guruji Santhosh Swamy">
-                        </figure>
-                    </div>
-
-                    <!-- Info Box -->
-                    <div class="need-fund-box">
-                        <img src="images/icon-funded-dollar.svg" alt="">
-                        <p><span class="counter trans-text" data-key="years_number">25</span><span class="trans-text" data-key="years_plus">+</span> <span class="trans-text" data-key="years_text">Years of Experience</span></p>
-                    </div>
-
+                    <!-- Contact Info Box End -->
                 </div>
-                <!-- About Us Images End -->
-            </div>
-
-            <div class="col-lg-6">
-                <!-- About Us Content Start -->
-                <div class="about-us-content">
-
-                    <!-- Section Title -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp trans-text" data-key="about_title">About Us</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque trans-text" data-key="about_heading">
-                            Divine Guidance Through Nadi Astrology
-                        </h2>
-                        <p class="wow fadeInUp trans-text" data-wow-delay="0.2s" data-key="about_desc">
-                            Sri Maha Siva Sukshama Jyothishaya Center offers authentic Nadi astrology readings 
-                            based on ancient palm leaf scriptures. Under the guidance of Guruji Santhosh Swamy, 
-                            we provide accurate predictions and remedies for life's challenges.
-                        </p>
-                    </div>
-
-                    <!-- About Body -->
-                    <div class="about-us-body">
-                        <div class="about-us-body-content">
-
-                            <!-- Service Box 1 -->
-                            <div class="about-support-box wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="icon-box">
-                                    <img src="images/icon-about-support.svg" alt="">
-                                </div>
-                                <div class="about-support-content">
-                                    <h3 class="trans-text" data-key="service1_title">Accurate Nadi Reading</h3>
-                                    <p class="trans-text" data-key="service1_desc">
-                                        Personalized predictions based on thumb impression and ancient Nadi scripts.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Service Box 2 -->
-                            <div class="about-support-box wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="icon-box">
-                                    <img src="images/icon-about-support.svg" alt="">
-                                </div>
-                                <div class="about-support-content">
-                                    <h3 class="trans-text" data-key="service2_title">Remedies & Solutions</h3>
-                                    <p class="trans-text" data-key="service2_desc">
-                                        Effective pariharams for marriage, career, health, and financial issues.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Button -->
-                            <div class="about-btn wow fadeInUp" data-wow-delay="0.6s">
-                                <a href="contact.html" class="btn-default trans-text" data-key="book_btn">Book Consultation</a>
-                            </div>
-
-                        </div>
-
-                        <!-- Stats -->
-                        <div class="helped-fund-item">
-                            <div class="helped-fund-content">
-                                <h2><span class="counter trans-text" data-key="clients_number">5000</span><span class="trans-text" data-key="clients_plus">+</span></h2>
-                                <h3 class="trans-text" data-key="clients_title">Happy Clients</h3>
-                                <p class="trans-text" data-key="clients_desc">Trusted guidance for thousands of satisfied devotees.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- About Body End -->
-
-                </div>
-                <!-- About Us Content End -->
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- About Us Section End -->
-
-   <!-- Our Approach Section Start -->
-<div class="our-approach">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-
-                <div class="our-approach-box-content">
-
-                    <!-- Our Approach Content -->
-                    <div class="our-approach-content">
-
-                        <!-- Section Title -->
-                        <div class="section-title">
-                            <h3 class="wow fadeInUp trans-text" data-key="approach_title">Our Approach</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque trans-text" data-key="approach_heading">
-                                Divine Guidance Through Ancient Nadi Wisdom
-                            </h2>
-                            <p class="wow fadeInUp trans-text" data-wow-delay="0.2s" data-key="approach_desc">
-                                Our approach is rooted in authentic Nadi astrology, using thumb impressions 
-                                and ancient palm leaf scriptures to reveal accurate life predictions and 
-                                provide effective remedies for a peaceful and successful life.
-                            </p>
-                        </div>
-
-                        <!-- Mission Vision Values -->
-                        <div class="mission-vision-box wow fadeInUp" data-wow-delay="0.6s">
-
-                            <!-- Mission -->
-                            <div class="mission-vision-item">
-                                <div class="icon-box">
-                                    <img src="images/icon-our-mission.svg" alt="">
-                                </div>
-                                <div class="mission-vision-content">
-                                    <h3 class="trans-text" data-key="mission_title">Our Mission</h3>
-                                    <p class="trans-text" data-key="mission_desc">
-                                        To provide accurate Nadi readings and spiritual remedies that help 
-                                        individuals overcome life challenges and achieve peace.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Vision -->
-                            <div class="mission-vision-item">
-                                <div class="icon-box">
-                                    <img src="images/icon-our-vision.svg" alt="">
-                                </div>
-                                <div class="mission-vision-content">
-                                    <h3 class="trans-text" data-key="vision_title">Our Vision</h3>
-                                    <p class="trans-text" data-key="vision_desc">
-                                        To be a trusted center for Nadi astrology, guiding people worldwide 
-                                        with ancient wisdom and divine knowledge.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Values -->
-                            <div class="mission-vision-item">
-                                <div class="icon-box">
-                                    <img src="images/icon-our-value.svg" alt="">
-                                </div>
-                                <div class="mission-vision-content">
-                                    <h3 class="trans-text" data-key="values_title">Our Values</h3>
-                                    <p class="trans-text" data-key="values_desc">
-                                        Authenticity, honesty, and spiritual integrity in delivering guidance 
-                                        and remedies for every individual.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- End Mission Vision -->
-
-                    </div>
-                    <!-- End Content -->
-
-                    <!-- Image -->
-                    <div class="our-approach-image">
-                        <figure class="image-anime">
-                            <img src="images/g5.jpeg" alt="Nadi Astrology Guidance">
-                        </figure>
-                    </div>
-
-                </div>
-
             </div>
         </div>
     </div>
-</div>
-<!-- Our Approach Section End -->
+    <!-- Page Contact Us End -->
 
-  <!-- Why Choose Us Section Start -->
-<div class="why-choose-us">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <div class="col-lg-6">
-                <!-- Images -->
-                <div class="why-choose-images">
-                    <div class="why-choose-image-1">
-                        <figure class="image-anime">
-                            <img src="images/a3.jpg" alt="Nadi Reading">
-                        </figure>
-                    </div>
-                    <div class="why-choose-image-2">
-                        <figure class="image-anime">
-                            <img src="images/a2.jpg" alt="Spiritual Guidance">
-                        </figure>
-                    </div>
+    <!-- Contact Form Section Start -->
+    <div class="contact-form-section">
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <!-- Google Map Start -->
+                    <div class="google-map-iframe">
+<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d249072.36441349646!2d77.78117187956404!3d12.729354501983648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMIG-5%20Ground%20Floor%206th%20Cross%20Teachers%20Colony%20Hosur!5e0!3m2!1sen!2sin!4v1778069347348!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    </div>
+                    <!-- Google Map End -->
                 </div>
-            </div>
 
-            <div class="col-lg-6">
-                <!-- Content -->
-                <div class="why-choose-content">
+              <div class="col-lg-6 order-lg-2 order-1">
+    <!-- Contact Form Start -->
+    <div class="contact-form-box">
+        
+        <!-- Section Title Start -->
+        <div class="section-title">
+            <h3 class="wow fadeInUp trans-text" data-key="reach_us">Reach Us</h3>
+            <h2 class="text-anime-style-2" data-cursor="-opaque trans-text" data-key="connect_title">
+                Connect for Guidance & Consultation
+            </h2>
+        </div>
+        <!-- Section Title End -->
 
-                    <!-- Title -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp trans-text" data-key="why_title">Why Choose Us</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque trans-text" data-key="why_heading">
-                            Trusted Nadi Astrology Guidance
-                        </h2>
-                        <p class="wow fadeInUp trans-text" data-wow-delay="0.2s" data-key="why_desc">
-                            We provide authentic Nadi astrology readings based on ancient palm leaf 
-                            manuscripts. With years of experience, we deliver accurate predictions 
-                            and effective remedies to guide your life in the right direction.
-                        </p>
+        <div class="contact-form">
+            <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.2s">
+                <div class="row">                                
+
+                    <div class="form-group col-md-6 mb-4">
+                        <input type="text" name="fname" class="form-control" id="fname" data-placeholder-key="first_name" placeholder="Your First Name" required>
+                        <div class="help-block with-errors"></div>
                     </div>
 
-                    <!-- List -->
-                    <div class="why-choose-list wow fadeInUp" data-wow-delay="0.4s">
-                        <ul>
-                            <li class="trans-text" data-key="why_list1">Authentic Nadi palm leaf reading</li>
-                            <li class="trans-text" data-key="why_list2">Accurate life predictions and guidance</li>
-                            <li class="trans-text" data-key="why_list3">Personalized remedies (Pariharam)</li>
-                            <li class="trans-text" data-key="why_list4">Trusted by thousands of satisfied clients</li>
-                        </ul>
+                    <div class="form-group col-md-6 mb-4">
+                        <input type="text" name="lname" class="form-control" id="lname" data-placeholder-key="last_name" placeholder="Your Last Name" required>
+                        <div class="help-block with-errors"></div>
                     </div>
 
-                    <!-- Counters -->
-                    <div class="why-choose-counters">
+                    <div class="form-group col-md-12 mb-4">
+                        <input type="email" name="email" class="form-control" id="email" data-placeholder-key="email" placeholder="Your Email Address" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
 
-                        <div class="why-choose-counter-item">
-                            <h2><span class="counter trans-text" data-key="exp_number">25</span><span class="trans-text" data-key="exp_plus">+</span></h2>
-                            <p class="trans-text" data-key="exp_text">Years of Experience</p>
-                        </div>
+                    <div class="form-group col-md-12 mb-4">
+                        <input type="text" name="phone" class="form-control" id="phone" data-placeholder-key="phone" placeholder="Your Contact Number" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
 
-                        <div class="why-choose-counter-item">
-                            <h2><span class="counter trans-text" data-key="clients_num">5000</span><span class="trans-text" data-key="clients_pl">+</span></h2>
-                            <p class="trans-text" data-key="clients_txt">Happy Clients</p>
-                        </div>
+                    <div class="form-group col-md-12 mb-5">
+                        <textarea name="message" class="form-control" id="message" rows="4" data-placeholder-key="message" placeholder="Share your concern or query..."></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
 
-                        <div class="why-choose-counter-item">
-                            <h2><span class="counter trans-text" data-key="percent_num">100</span><span class="trans-text" data-key="percent_sym">%</span></h2>
-                            <p class="trans-text" data-key="percent_txt">Confidential & Trusted</p>
-                        </div>
-
+                    <div class="col-md-12">
+                        <button type="submit" class="btn-default">
+                            <span class="trans-text" data-key="submit_btn">Request Consultation</span>
+                        </button>
+                        <div id="msgSubmit" class="h3 hidden"></div>
                     </div>
 
                 </div>
-            </div>
-
+            </form>
         </div>
     </div>
+    <!-- Contact Form End -->
 </div>
-<!-- Why Choose Us Section End -->
+            </div>
+        </div>
+    </div>
+    <!-- Contact Form Section End -->
 
-      <!-- Main Footer Section Start -->
+    <!-- Main Footer Section Start -->
     <footer class="main-footer">
         <div class="container">
             <div class="row">
@@ -544,6 +421,7 @@
                             <div class="footer-social-links">
                                 <h3 class="trans-text" data-key="follow_us">Follow on</h3>
                                 <ul>
+                                    
                                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>                                    								
                                 </ul>
@@ -554,6 +432,17 @@
 
                         <!-- Footer Links Box Start -->
                         <div class="footer-links-box">
+                            <!-- Newsletter Form Start -->
+                            <!-- <div class="newsletter-form">
+                                <form id="newsletterForm" action="#" method="POST">
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" id="mail" placeholder="Enter Your Email" required="">
+                                        <button type="submit" class="newsletter-btn"><i class="fa-regular fa-paper-plane"></i></button>
+                                    </div>
+                                </form>
+                            </div> -->
+                            <!-- Newsletter Form End -->
+
                             <!-- Footer Links Start -->
                             <div class="footer-links">
                                 <h3 class="trans-text" data-key="quick_link">Quick link</h3>
@@ -583,7 +472,9 @@
                                     <li><a href="services.html" class="trans-text" data-key="serv10">Expenditure & Losses</a></li>
                                 </ul>
                             </div>
-                            <!-- Footer Links End -->                            
+                            <!-- Footer Links End -->
+                            
+                            
                         </div>
                         <!-- Footer Links Box End -->
                     </div>
@@ -599,12 +490,12 @@
                     <div class="col-md-12">
                         <!-- Copyright Text Start -->
                         <div class="copyright-text">
-                            <p>
-                                Copyright © <script>document.write(new Date().getFullYear())</script> 
-                                Sri Maha Siva Sukshama Jyothishaya Center. All Rights Reserved. 
-                                Developed by <a href="https://chennaileads.com" target="_blank">chennaileads.com</a>
-                            </p>
-                        </div>
+    <p>
+        Copyright © <script>document.write(new Date().getFullYear())</script> 
+        Sri Maha Siva Sukshama Jyothishaya Center. All Rights Reserved. 
+        Developed by <a href="https://chennaileads.com" target="_blank">chennaileads.com</a>
+    </p>
+</div>
                         <!-- Copyright Text End -->
                     </div>
                 </div>
@@ -614,6 +505,7 @@
     </footer>
     <!-- Main Footer Section End -->
 
+    <!-- Jquery Library File -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap js file -->
     <script src="js/bootstrap.min.js"></script>
@@ -647,148 +539,108 @@
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
     
-    <!-- ========== WORKING TRANSLATION SCRIPT ========== -->
+    <!-- ========== WORKING MANUAL TRANSLATION SCRIPT ========== -->
     <script>
-    // Complete translations for 5 languages - About Us Page
+    // Complete translations for 5 languages - 100% WORKING
     const translations = {
         en: {
-            about_span: "About", us_span: "us", home_breadcrumb: "home", about_breadcrumb: "about us",
-            about_title: "About Us", about_heading: "Divine Guidance Through Nadi Astrology",
-            about_desc: "Sri Maha Siva Sukshama Jyothishaya Center offers authentic Nadi astrology readings based on ancient palm leaf scriptures. Under the guidance of Guruji Santhosh Swamy, we provide accurate predictions and remedies for life's challenges.",
-            service1_title: "Accurate Nadi Reading", service1_desc: "Personalized predictions based on thumb impression and ancient Nadi scripts.",
-            service2_title: "Remedies & Solutions", service2_desc: "Effective pariharams for marriage, career, health, and financial issues.",
-            book_btn: "Book Consultation",
-            years_number: "25", years_plus: "+", years_text: "Years of Experience",
-            clients_number: "5000", clients_plus: "+", clients_title: "Happy Clients", clients_desc: "Trusted guidance for thousands of satisfied devotees.",
-            approach_title: "Our Approach", approach_heading: "Divine Guidance Through Ancient Nadi Wisdom",
-            approach_desc: "Our approach is rooted in authentic Nadi astrology, using thumb impressions and ancient palm leaf scriptures to reveal accurate life predictions and provide effective remedies for a peaceful and successful life.",
-            mission_title: "Our Mission", mission_desc: "To provide accurate Nadi readings and spiritual remedies that help individuals overcome life challenges and achieve peace.",
-            vision_title: "Our Vision", vision_desc: "To be a trusted center for Nadi astrology, guiding people worldwide with ancient wisdom and divine knowledge.",
-            values_title: "Our Values", values_desc: "Authenticity, honesty, and spiritual integrity in delivering guidance and remedies for every individual.",
-            why_title: "Why Choose Us", why_heading: "Trusted Nadi Astrology Guidance",
-            why_desc: "We provide authentic Nadi astrology readings based on ancient palm leaf manuscripts. With years of experience, we deliver accurate predictions and effective remedies to guide your life in the right direction.",
-            why_list1: "Authentic Nadi palm leaf reading", why_list2: "Accurate life predictions and guidance",
-            why_list3: "Personalized remedies (Pariharam)", why_list4: "Trusted by thousands of satisfied clients",
-            exp_number: "25", exp_plus: "+", exp_text: "Years of Experience",
-            clients_num: "5000", clients_pl: "+", clients_txt: "Happy Clients",
-            percent_num: "100", percent_sym: "%", percent_txt: "Confidential & Trusted",
-            mobile_label: "Mobile", location_label: "Location", footer_address: "MIG-5 Ground Floor, 6th Cross, Teachers Colony, Hosur",
+            contact_span: "Contact", contact_us_text: "us",
+            home_breadcrumb: "home", contact_breadcrumb: "contact us",
+            contact_heading: "contact us", location_heading: "location",
+            address_text: "MIG-5 Ground Floor, 6th Cross, Teachers Colony, Hosur",
+            reach_us: "Reach Us", connect_title: "Connect for Guidance & Consultation",
+            first_name: "Your First Name", last_name: "Your Last Name",
+            email: "Your Email Address", phone: "Your Contact Number",
+            message: "Share your concern or query...", submit_btn: "Request Consultation",
+            mobile_label: "Mobile", location_label: "Location",
+            footer_address: "MIG-5 Ground Floor, 6th Cross, Teachers Colony, Hosur",
             follow_us: "Follow on", quick_link: "Quick link", our_services: "Our Services",
-            nav_home: "home", nav_about: "About us", nav_services: "services", nav_gallery: "Gallery", nav_contact: "Contact Us",
-            serv1: "Generalized Report", serv2: "Family & Finance", serv3: "Siblings & Courage", serv4: "Mother & Comforts Chapter",
-            serv5: "Debts, Disease & Litigation", serv6: "Marriage", serv7: "Longevity", serv8: "Spiritual Attainment & Fortunes",
+            nav_home: "home", nav_about: "About us", nav_services: "services",
+            nav_gallery: "Gallery", nav_contact: "Contact Us",
+            serv1: "Generalized Report", serv2: "Family & Finance",
+            serv3: "Siblings & Courage", serv4: "Mother & Comforts Chapter",
+            serv5: "Debts, Disease & Litigation", serv6: "Marriage",
+            serv7: "Longevity", serv8: "Spiritual Attainment & Fortunes",
             serv9: "Profession", serv10: "Expenditure & Losses"
         },
         ta: {
-            about_span: "எங்களைப்", us_span: "பற்றி", home_breadcrumb: "முகப்பு", about_breadcrumb: "எங்களைப் பற்றி",
-            about_title: "எங்களைப் பற்றி", about_heading: "நாடி ஜோதிடத்தின் மூலம் தெய்வீக வழிகாட்டுதல்",
-            about_desc: "ஸ்ரீ மகா சிவ சூக்ஷ்ம ஜோதிஷயா மையம் பண்டைய பனை ஓலை சுவடிகளை அடிப்படையாகக் கொண்ட உண்மையான நாடி ஜோதிட வாசிப்புகளை வழங்குகிறது. குருஜி சந்தோஷ் சுவாமியின் வழிகாட்டுதலின் கீழ், வாழ்க்கையின் சவால்களுக்கான துல்லியமான கணிப்புகள் மற்றும் தீர்வுகளை நாங்கள் வழங்குகிறோம்.",
-            service1_title: "துல்லியமான நாடி வாசிப்பு", service1_desc: "கைரேகை மற்றும் பண்டைய நாடி சுவடிகளை அடிப்படையாகக் கொண்ட தனிப்பயனாக்கப்பட்ட கணிப்புகள்.",
-            service2_title: "பரிகாரங்கள் & தீர்வுகள்", service2_desc: "திருமணம், தொழில், ஆரோக்கியம் மற்றும் நிதி சிக்கல்களுக்கான பயனுள்ள பரிகாரங்கள்.",
-            book_btn: "ஆலோசனை முன்பதிவு",
-            years_number: "25", years_plus: "+", years_text: "வருட அனுபவம்",
-            clients_number: "5000", clients_plus: "+", clients_title: "மகிழ்ச்சியான வாடிக்கையாளர்கள்", clients_desc: "ஆயிரக்கணக்கான திருப்தியடைந்த பக்தர்களுக்கு நம்பகமான வழிகாட்டுதல்.",
-            approach_title: "எங்கள் அணுகுமுறை", approach_heading: "பண்டைய நாடி ஞானத்தின் மூலம் தெய்வீக வழிகாட்டுதல்",
-            approach_desc: "எங்கள் அணுகுமுறை உண்மையான நாடி ஜோதிடத்தில் வேரூன்றியுள்ளது, கைரேகைகள் மற்றும் பண்டைய பனை ஓலை சுவடிகளைப் பயன்படுத்தி துல்லியமான வாழ்க்கை கணிப்புகளை வெளிப்படுத்துகிறது.",
-            mission_title: "எங்கள் நோக்கம்", mission_desc: "துல்லியமான நாடி வாசிப்புகள் மற்றும் ஆன்மீக பரிகாரங்களை வழங்குவது, தனிநபர்கள் வாழ்க்கை சவால்களை சமாளிக்க உதவுகிறது.",
-            vision_title: "எங்கள் பார்வை", vision_desc: "நாடி ஜோதிடத்திற்கான நம்பகமான மையமாக இருப்பது, பண்டைய ஞானத்துடன் உலகெங்கிலும் உள்ள மக்களுக்கு வழிகாட்டுதல்.",
-            values_title: "எங்கள் மதிப்புகள்", values_desc: "ஒவ்வொரு நபருக்கும் வழிகாட்டுதல் மற்றும் பரிகாரங்களை வழங்குவதில் நம்பகத்தன்மை, நேர்மை மற்றும் ஆன்மீக ஒருமைப்பாடு.",
-            why_title: "ஏன் எங்களை தேர்வு செய்ய வேண்டும்", why_heading: "நம்பகமான நாடி ஜோதிட வழிகாட்டுதல்",
-            why_desc: "பண்டைய பனை ஓலை கையெழுத்துப் பிரதிகளை அடிப்படையாகக் கொண்ட உண்மையான நாடி ஜோதிட வாசிப்புகளை நாங்கள் வழங்குகிறோம். பல வருட அனுபவத்துடன், உங்கள் வாழ்க்கையை சரியான திசையில் வழிநடத்த துல்லியமான கணிப்புகள் மற்றும் பயனுள்ள தீர்வுகளை வழங்குகிறோம்.",
-            why_list1: "உண்மையான நாடி பனை ஓலை வாசிப்பு", why_list2: "துல்லியமான வாழ்க்கை கணிப்புகள் மற்றும் வழிகாட்டுதல்",
-            why_list3: "தனிப்பயனாக்கப்பட்ட பரிகாரங்கள்", why_list4: "ஆயிரக்கணக்கான திருப்தியடைந்த வாடிக்கையாளர்களால் நம்பப்படுகிறது",
-            exp_number: "25", exp_plus: "+", exp_text: "வருட அனுபவம்",
-            clients_num: "5000", clients_pl: "+", clients_txt: "மகிழ்ச்சியான வாடிக்கையாளர்கள்",
-            percent_num: "100", percent_sym: "%", percent_txt: "ரகசியமான & நம்பகமான",
-            mobile_label: "அலைபேசி", location_label: "இருப்பிடம்", footer_address: "MIG-5 தரை தளம், 6வது குறுக்கு சாலை, ஆசிரியர் காலனி, ஹோசூர்",
+            contact_span: "தொடர்பு", contact_us_text: "கொள்ளுங்கள்",
+            home_breadcrumb: "முகப்பு", contact_breadcrumb: "தொடர்பு கொள்ளுங்கள்",
+            contact_heading: "தொடர்பு கொள்ளுங்கள்", location_heading: "இருப்பிடம்",
+            address_text: "MIG-5 தரை தளம், 6வது குறுக்கு சாலை, ஆசிரியர் காலனி, ஹோசூர்",
+            reach_us: "எங்களை அணுகுக", connect_title: "வழிகாட்டுதலுக்கும் ஆலோசனைக்கும் இணையுங்கள்",
+            first_name: "உங்கள் முதல் பெயர்", last_name: "உங்கள் குடும்ப பெயர்",
+            email: "உங்கள் மின்னஞ்சல்", phone: "உங்கள் தொடர்பு எண்",
+            message: "உங்கள் கேள்வியைப் பகிரவும்", submit_btn: "ஆலோசனை கோருக",
+            mobile_label: "அலைபேசி", location_label: "இருப்பிடம்",
+            footer_address: "MIG-5 தரை தளம், 6வது குறுக்கு சாலை, ஆசிரியர் காலனி, ஹோசூர்",
             follow_us: "பின்தொடரவும்", quick_link: "விரைவு இணைப்புகள்", our_services: "எங்கள் சேவைகள்",
-            nav_home: "முகப்பு", nav_about: "எங்களை பற்றி", nav_services: "சேவைகள்", nav_gallery: "கேலரி", nav_contact: "தொடர்பு",
-            serv1: "பொது அறிக்கை", serv2: "குடும்பம் & நிதி", serv3: "உடன்பிறப்புகள் & தைரியம்", serv4: "தாய் & ஆறுதல்",
-            serv5: "கடன், நோய் & வழக்கு", serv6: "திருமணம்", serv7: "நீண்ட ஆயுள்", serv8: "ஆன்மீகம் & அதிர்ஷ்டங்கள்",
+            nav_home: "முகப்பு", nav_about: "எங்களை பற்றி", nav_services: "சேவைகள்",
+            nav_gallery: "கேலரி", nav_contact: "தொடர்பு",
+            serv1: "பொது அறிக்கை", serv2: "குடும்பம் & நிதி",
+            serv3: "உடன்பிறப்புகள் & தைரியம்", serv4: "தாய் & ஆறுதல்",
+            serv5: "கடன், நோய் & வழக்கு", serv6: "திருமணம்",
+            serv7: "நீண்ட ஆயுள்", serv8: "ஆன்மீகம் & அதிர்ஷ்டங்கள்",
             serv9: "தொழில்", serv10: "செலவு & இழப்புகள்"
         },
         hi: {
-            about_span: "हमारे", us_span: "बारे में", home_breadcrumb: "होम", about_breadcrumb: "हमारे बारे में",
-            about_title: "हमारे बारे में", about_heading: "नाड़ी ज्योतिष के माध्यम से दिव्य मार्गदर्शन",
-            about_desc: "श्री महा शिव सूक्ष्म ज्योतिषय केंद्र प्राचीन ताड़ के पत्तों की पांडुलिपियों पर आधारित प्रामाणिक नाड़ी ज्योतिष रीडिंग प्रदान करता है। गुरुजी संतोष स्वामी के मार्गदर्शन में, हम जीवन की चुनौतियों के लिए सटीक भविष्यवाणियाँ और उपाय प्रदान करते हैं।",
-            service1_title: "सटीक नाड़ी रीडिंग", service1_desc: "अंगूठे के निशान और प्राचीन नाड़ी लिपियों पर आधारित व्यक्तिगत भविष्यवाणियाँ।",
-            service2_title: "उपाय और समाधान", service2_desc: "विवाह, करियर, स्वास्थ्य और वित्तीय मुद्दों के लिए प्रभावी पारिहारम।",
-            book_btn: "परामर्श बुक करें",
-            years_number: "25", years_plus: "+", years_text: "वर्षों का अनुभव",
-            clients_number: "5000", clients_plus: "+", clients_title: "खुश ग्राहक", clients_desc: "हजारों संतुष्ट भक्तों के लिए भरोसेमंद मार्गदर्शन।",
-            approach_title: "हमारा दृष्टिकोण", approach_heading: "प्राचीन नाड़ी ज्ञान के माध्यम से दिव्य मार्गदर्शन",
-            approach_desc: "हमारा दृष्टिकोण प्रामाणिक नाड़ी ज्योतिष में निहित है, जो सटीक जीवन भविष्यवाणियों को प्रकट करने के लिए अंगूठे के निशान और प्राचीन ताड़ के पत्तों की पांडुलिपियों का उपयोग करता है।",
-            mission_title: "हमारा मिशन", mission_desc: "सटीक नाड़ी रीडिंग और आध्यात्मिक उपाय प्रदान करना जो व्यक्तियों को जीवन की चुनौतियों पर काबू पाने और शांति प्राप्त करने में मदद करते हैं।",
-            vision_title: "हमारा विजन", vision_desc: "नाड़ी ज्योतिष के लिए एक भरोसेमंद केंद्र बनना, प्राचीन ज्ञान से दुनिया भर के लोगों का मार्गदर्शन करना।",
-            values_title: "हमारे मूल्य", values_desc: "प्रत्येक व्यक्ति के लिए मार्गदर्शन और उपाय प्रदान करने में प्रामाणिकता, ईमानदारी और आध्यात्मिक अखंडता।",
-            why_title: "हमें क्यों चुनें", why_heading: "भरोसेमंद नाड़ी ज्योतिष मार्गदर्शन",
-            why_desc: "हम प्राचीन ताड़ के पत्तों की पांडुलिपियों पर आधारित प्रामाणिक नाड़ी ज्योतिष रीडिंग प्रदान करते हैं। वर्षों के अनुभव के साथ, हम आपके जीवन को सही दिशा में मार्गदर्शन करने के लिए सटीक भविष्यवाणियाँ और प्रभावी उपाय प्रदान करते हैं।",
-            why_list1: "प्रामाणिक नाड़ी ताड़ पत्ता रीडिंग", why_list2: "सटीक जीवन भविष्यवाणियाँ और मार्गदर्शन",
-            why_list3: "व्यक्तिगत उपाय (पारिहारम)", why_list4: "हजारों संतुष्ट ग्राहकों द्वारा भरोसा किया गया",
-            exp_number: "25", exp_plus: "+", exp_text: "वर्षों का अनुभव",
-            clients_num: "5000", clients_pl: "+", clients_txt: "खुश ग्राहक",
-            percent_num: "100", percent_sym: "%", percent_txt: "गोपनीय और भरोसेमंद",
-            mobile_label: "मोबाइल", location_label: "स्थान", footer_address: "MIG-5 ग्राउंड फ्लोर, छठा क्रॉस, टीचर्स कॉलोनी, होसुर",
+            contact_span: "संपर्क", contact_us_text: "करें",
+            home_breadcrumb: "होम", contact_breadcrumb: "संपर्क करें",
+            contact_heading: "संपर्क करें", location_heading: "स्थान",
+            address_text: "MIG-5 ग्राउंड फ्लोर, छठा क्रॉस, टीचर्स कॉलोनी, होसुर",
+            reach_us: "हमसे संपर्क करें", connect_title: "मार्गदर्शन और परामर्श के लिए जुड़ें",
+            first_name: "आपका पहला नाम", last_name: "आपका अंतिम नाम",
+            email: "आपका ईमेल पता", phone: "आपका संपर्क नंबर",
+            message: "अपनी चिंता या प्रश्न साझा करें", submit_btn: "परामर्श का अनुरोध करें",
+            mobile_label: "मोबाइल", location_label: "स्थान",
+            footer_address: "MIG-5 ग्राउंड फ्लोर, छठा क्रॉस, टीचर्स कॉलोनी, होसुर",
             follow_us: "फॉलो करें", quick_link: "त्वरित लिंक", our_services: "हमारी सेवाएँ",
-            nav_home: "होम", nav_about: "हमारे बारे में", nav_services: "सेवाएँ", nav_gallery: "गैलरी", nav_contact: "संपर्क करें",
-            serv1: "सामान्य रिपोर्ट", serv2: "परिवार और वित्त", serv3: "भाई-बहन और साहस", serv4: "माँ और सुख",
-            serv5: "ऋण, रोग और मुकदमेबाजी", serv6: "विवाह", serv7: "दीर्घायु", serv8: "आध्यात्मिक प्राप्ति",
+            nav_home: "होम", nav_about: "हमारे बारे में", nav_services: "सेवाएँ",
+            nav_gallery: "गैलरी", nav_contact: "संपर्क करें",
+            serv1: "सामान्य रिपोर्ट", serv2: "परिवार और वित्त",
+            serv3: "भाई-बहन और साहस", serv4: "माँ और सुख",
+            serv5: "ऋण, रोग और मुकदमेबाजी", serv6: "विवाह",
+            serv7: "दीर्घायु", serv8: "आध्यात्मिक प्राप्ति",
             serv9: "व्यवसाय", serv10: "व्यय और हानियाँ"
         },
         kn: {
-            about_span: "ನಮ್ಮ", us_span: "ಬಗ್ಗೆ", home_breadcrumb: "ಮುಖಪುಟ", about_breadcrumb: "ನಮ್ಮ ಬಗ್ಗೆ",
-            about_title: "ನಮ್ಮ ಬಗ್ಗೆ", about_heading: "ನಾಡಿ ಜ್ಯೋತಿಷ್ಯದ ಮೂಲಕ ದೈವಿಕ ಮಾರ್ಗದರ್ಶನ",
-            about_desc: "ಶ್ರೀ ಮಹಾ ಶಿವ ಸೂಕ್ಷ್ಮ ಜ್ಯೋತಿಷಯ ಕೇಂದ್ರವು ಪ್ರಾಚೀನ ತಾಳೆ ಎಲೆ ಹಸ್ತಪ್ರತಿಗಳನ್ನು ಆಧರಿಸಿದ ದೃಢೀಕೃತ ನಾಡಿ ಜ್ಯೋತಿಷ್ಯ ವಾಚನಗಳನ್ನು ನೀಡುತ್ತದೆ. ಗುರುಜಿ ಸಂತೋಷ್ ಸ್ವಾಮಿಯವರ ಮಾರ್ಗದರ್ಶನದಲ್ಲಿ, ಜೀವನದ ಸವಾಲುಗಳಿಗೆ ನಿಖರವಾದ ಮುನ್ಸೂಚನೆಗಳು ಮತ್ತು ಪರಿಹಾರಗಳನ್ನು ನಾವು ಒದಗಿಸುತ್ತೇವೆ.",
-            service1_title: "ನಿಖರ ನಾಡಿ ವಾಚನ", service1_desc: "ಹೆಬ್ಬೆರಳಿನ ಗುರುತು ಮತ್ತು ಪ್ರಾಚೀನ ನಾಡಿ ಸ್ಕ್ರಿಪ್ಟ್ಗಳನ್ನು ಆಧರಿಸಿದ ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಮುನ್ಸೂಚನೆಗಳು.",
-            service2_title: "ಪರಿಹಾರಗಳು & ಪರಿಹಾರಗಳು", service2_desc: "ವಿವಾಹ, ವೃತ್ತಿ, ಆರೋಗ್ಯ ಮತ್ತು ಹಣಕಾಸಿನ ಸಮಸ್ಯೆಗಳಿಗೆ ಪರಿಣಾಮಕಾರಿ ಪರಿಹಾರಗಳು.",
-            book_btn: "ಸಮಾಲೋಚನೆ ಬುಕ್ ಮಾಡಿ",
-            years_number: "25", years_plus: "+", years_text: "ವರ್ಷಗಳ ಅನುಭವ",
-            clients_number: "5000", clients_plus: "+", clients_title: "ಸಂತೋಷದ ಗ್ರಾಹಕರು", clients_desc: "ಸಾವಿರಾರು ತೃಪ್ತಿ ಹೊಂದಿದ ಭಕ್ತರಿಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಮಾರ್ಗದರ್ಶನ.",
-            approach_title: "ನಮ್ಮ ವಿಧಾನ", approach_heading: "ಪ್ರಾಚೀನ ನಾಡಿ ಜ್ಞಾನದ ಮೂಲಕ ದೈವಿಕ ಮಾರ್ಗದರ್ಶನ",
-            approach_desc: "ನಮ್ಮ ವಿಧಾನವು ದೃಢೀಕೃತ ನಾಡಿ ಜ್ಯೋತಿಷ್ಯದಲ್ಲಿ ಬೇರೂರಿದೆ, ನಿಖರವಾದ ಜೀವನ ಮುನ್ಸೂಚನೆಗಳನ್ನು ಬಹಿರಂಗಪಡಿಸಲು ಹೆಬ್ಬೆರಳಿನ ಗುರುತುಗಳು ಮತ್ತು ಪ್ರಾಚೀನ ತಾಳೆ ಎಲೆ ಹಸ್ತಪ್ರತಿಗಳನ್ನು ಬಳಸುತ್ತದೆ.",
-            mission_title: "ನಮ್ಮ ಧ್ಯೇಯ", mission_desc: "ನಿಖರವಾದ ನಾಡಿ ವಾಚನಗಳು ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕ ಪರಿಹಾರಗಳನ್ನು ಒದಗಿಸುವುದು ವ್ಯಕ್ತಿಗಳು ಜೀವನದ ಸವಾಲುಗಳನ್ನು ನಿವಾರಿಸಲು ಮತ್ತು ಶಾಂತಿಯನ್ನು ಸಾಧಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
-            vision_title: "ನಮ್ಮ ದೃಷ್ಟಿ", vision_desc: "ನಾಡಿ ಜ್ಯೋತಿಷ್ಯಕ್ಕಾಗಿ ವಿಶ್ವಾಸಾರ್ಹ ಕೇಂದ್ರವಾಗಲು, ಪ್ರಾಚೀನ ಜ್ಞಾನದೊಂದಿಗೆ ವಿಶ್ವಾದ್ಯಂತ ಜನರಿಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡುವುದು.",
-            values_title: "ನಮ್ಮ ಮೌಲ್ಯಗಳು", values_desc: "ಪ್ರತಿಯೊಬ್ಬ ವ್ಯಕ್ತಿಗೆ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಪರಿಹಾರಗಳನ್ನು ನೀಡುವಲ್ಲಿ ದೃಢೀಕರಣ, ಪ್ರಾಮಾಣಿಕತೆ ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕ ಸಮಗ್ರತೆ.",
-            why_title: "ನಮ್ಮನ್ನು ಏಕೆ ಆರಿಸಬೇಕು", why_heading: "ವಿಶ್ವಾಸಾರ್ಹ ನಾಡಿ ಜ್ಯೋತಿಷ್ಯ ಮಾರ್ಗದರ್ಶನ",
-            why_desc: "ನಾವು ಪ್ರಾಚೀನ ತಾಳೆ ಎಲೆ ಹಸ್ತಪ್ರತಿಗಳನ್ನು ಆಧರಿಸಿದ ದೃಢೀಕೃತ ನಾಡಿ ಜ್ಯೋತಿಷ್ಯ ವಾಚನಗಳನ್ನು ಒದಗಿಸುತ್ತೇವೆ. ವರ್ಷಗಳ ಅನುಭವದೊಂದಿಗೆ, ನಾವು ನಿಮ್ಮ ಜೀವನವನ್ನು ಸರಿಯಾದ ದಿಕ್ಕಿನಲ್ಲಿ ಮಾರ್ಗದರ್ಶನ ಮಾಡಲು ನಿಖರವಾದ ಮುನ್ಸೂಚನೆಗಳು ಮತ್ತು ಪರಿಣಾಮಕಾರಿ ಪರಿಹಾರಗಳನ್ನು ನೀಡುತ್ತೇವೆ.",
-            why_list1: "ದೃಢೀಕೃತ ನಾಡಿ ತಾಳೆ ಎಲೆ ವಾಚನ", why_list2: "ನಿಖರವಾದ ಜೀವನ ಮುನ್ಸೂಚನೆಗಳು ಮತ್ತು ಮಾರ್ಗದರ್ಶನ",
-            why_list3: "ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಪರಿಹಾರಗಳು", why_list4: "ಸಾವಿರಾರು ತೃಪ್ತಿ ಹೊಂದಿದ ಗ್ರಾಹಕರಿಂದ ನಂಬಲಾಗಿದೆ",
-            exp_number: "25", exp_plus: "+", exp_text: "ವರ್ಷಗಳ ಅನುಭವ",
-            clients_num: "5000", clients_pl: "+", clients_txt: "ಸಂತೋಷದ ಗ್ರಾಹಕರು",
-            percent_num: "100", percent_sym: "%", percent_txt: "ಗೌಪ್ಯ & ವಿಶ್ವಾಸಾರ್ಹ",
-            mobile_label: "ಮೊಬೈಲ್", location_label: "ಸ್ಥಳ", footer_address: "MIG-5 ನೆಲ ಮಹಡಿ, 6 ನೇ ಅಡ್ಡ, ಟೀಚರ್ಸ್ ಕಾಲೋನಿ, ಹೊಸೂರು",
+            contact_span: "ಸಂಪರ್ಕ", contact_us_text: "ಮಾಡಿ",
+            home_breadcrumb: "ಮುಖಪುಟ", contact_breadcrumb: "ಸಂಪರ್ಕಿಸಿ",
+            contact_heading: "ಸಂಪರ್ಕಿಸಿ", location_heading: "ಸ್ಥಳ",
+            address_text: "MIG-5 ನೆಲ ಮಹಡಿ, 6 ನೇ ಅಡ್ಡ, ಟೀಚರ್ಸ್ ಕಾಲೋನಿ, ಹೊಸೂರು",
+            reach_us: "ನಮ್ಮನ್ನು ತಲುಪಿ", connect_title: "ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಸಲಹೆಗಾಗಿ ಸಂಪರ್ಕಿಸಿ",
+            first_name: "ನಿಮ್ಮ ಮೊದಲ ಹೆಸರು", last_name: "ನಿಮ್ಮ ಕೊನೆಯ ಹೆಸರು",
+            email: "ನಿಮ್ಮ ಇಮೇಲ್", phone: "ನಿಮ್ಮ ಸಂಪರ್ಕ ಸಂಖ್ಯೆ",
+            message: "ನಿಮ್ಮ ಕಾಳಜಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ", submit_btn: "ಸಲಹೆ ವಿನಂತಿಸಿ",
+            mobile_label: "ಮೊಬೈಲ್", location_label: "ಸ್ಥಳ",
+            footer_address: "MIG-5 ನೆಲ ಮಹಡಿ, 6 ನೇ ಅಡ್ಡ, ಟೀಚರ್ಸ್ ಕಾಲೋನಿ, ಹೊಸೂರು",
             follow_us: "ಅನುಸರಿಸಿ", quick_link: "ತ್ವರಿತ ಲಿಂಕ್", our_services: "ನಮ್ಮ ಸೇವೆಗಳು",
-            nav_home: "ಮುಖಪುಟ", nav_about: "ನಮ್ಮ ಬಗ್ಗೆ", nav_services: "ಸೇವೆಗಳು", nav_gallery: "ಗ್ಯಾಲರಿ", nav_contact: "ಸಂಪರ್ಕಿಸಿ",
-            serv1: "ಸಾಮಾನ್ಯ ವರದಿ", serv2: "ಕುಟುಂಬ & ಹಣಕಾಸು", serv3: "ಒಡಹುಟ್ಟಿದವರು & ಧೈರ್ಯ", serv4: "ತಾಯಿ & ಸೌಕರ್ಯ",
-            serv5: "ಸಾಲ, ರೋಗ & ದಾವೆ", serv6: "ವಿವಾಹ", serv7: "ದೀರ್ಘಾಯುಷ್ಯ", serv8: "ಆಧ್ಯಾತ್ಮಿಕ ಸಾಧನೆ",
+            nav_home: "ಮುಖಪುಟ", nav_about: "ನಮ್ಮ ಬಗ್ಗೆ", nav_services: "ಸೇವೆಗಳು",
+            nav_gallery: "ಗ್ಯಾಲರಿ", nav_contact: "ಸಂಪರ್ಕಿಸಿ",
+            serv1: "ಸಾಮಾನ್ಯ ವರದಿ", serv2: "ಕುಟುಂಬ & ಹಣಕಾಸು",
+            serv3: "ಒಡಹುಟ್ಟಿದವರು & ಧೈರ್ಯ", serv4: "ತಾಯಿ & ಸೌಕರ್ಯ",
+            serv5: "ಸಾಲ, ರೋಗ & ದಾವೆ", serv6: "ವಿವಾಹ",
+            serv7: "ದೀರ್ಘಾಯುಷ್ಯ", serv8: "ಆಧ್ಯಾತ್ಮಿಕ ಸಾಧನೆ",
             serv9: "ವೃತ್ತಿ", serv10: "ವೆಚ್ಚ & ನಷ್ಟಗಳು"
         },
         te: {
-            about_span: "మా", us_span: "గురించి", home_breadcrumb: "హోమ్", about_breadcrumb: "మా గురించి",
-            about_title: "మా గురించి", about_heading: "నాడీ జ్యోతిష్యం ద్వారా దైవిక మార్గదర్శకత్వం",
-            about_desc: "శ్రీ మహా శివ సూక్ష్మ జ్యోతిషయ కేంద్రం ప్రాచీన తాటి ఆకు మాన్యుస్క్రిప్ట్ల ఆధారంగా ప్రామాణికమైన నాడీ జ్యోతిష్య రీడింగ్లను అందిస్తుంది. గురుజీ సంతోష్ స్వామి మార్గదర్శకత్వంలో, జీవిత సవాళ్లకు ఖచ్చితమైన అంచనాలు మరియు పరిష్కారాలను మేము అందిస్తాము.",
-            service1_title: "ఖచ్చితమైన నాడీ రీడింగ్", service1_desc: "బొటనవేలి ముద్ర మరియు ప్రాచీన నాడీ స్క్రిప్ట్ల ఆధారంగా వ్యక్తిగతీకరించిన అంచనాలు.",
-            service2_title: "పరిహారాలు & పరిష్కారాలు", service2_desc: "వివాహం, కెరీర్, ఆరోగ్యం మరియు ఆర్థిక సమస్యలకు ప్రభావవంతమైన పరిహారాలు.",
-            book_btn: "సంప్రదింపు బుక్ చేయండి",
-            years_number: "25", years_plus: "+", years_text: "సంవత్సరాల అనుభవం",
-            clients_number: "5000", clients_plus: "+", clients_title: "సంతోషకరమైన క్లయింట్లు", clients_desc: "వేలాది మంది సంతృప్తి చెందిన భక్తులకు నమ్మకమైన మార్గదర్శకత్వం.",
-            approach_title: "మా విధానం", approach_heading: "ప్రాచీన నాడీ జ్ఞానం ద్వారా దైవిక మార్గదర్శకత్వం",
-            approach_desc: "మా విధానం ప్రామాణికమైన నాడీ జ్యోతిష్యంలో పాతుకుపోయింది, ఖచ్చితమైన జీవిత అంచనాలను వెల్లడించడానికి బొటనవేలి ముద్రలు మరియు ప్రాచీన తాటి ఆకు మాన్యుస్క్రిప్ట్లను ఉపయోగిస్తుంది.",
-            mission_title: "మా లక్ష్యం", mission_desc: "ఖచ్చితమైన నాడీ రీడింగ్లు మరియు ఆధ్యాత్మిక పరిహారాలను అందించడం వ్యక్తులు జీవిత సవాళ్లను అధిగమించడానికి మరియు శాంతిని సాధించడానికి సహాయపడుతుంది.",
-            vision_title: "మా దృష్టి", vision_desc: "నాడీ జ్యోతిష్యానికి నమ్మకమైన కేంద్రంగా ఉండటం, ప్రాచీన జ్ఞానంతో ప్రపంచవ్యాప్తంగా ప్రజలకు మార్గదర్శకత్వం ఇవ్వడం.",
-            values_title: "మా విలువలు", values_desc: "ప్రతి వ్యక్తికి మార్గదర్శకత్వం మరియు పరిహారాలను అందించడంలో ప్రామాణికత, నిజాయితీ మరియు ఆధ్యాత్మిక సమగ్రత.",
-            why_title: "మమ్మల్ని ఎందుకు ఎంచుకోవాలి", why_heading: "నమ్మకమైన నాడీ జ్యోతిష్య మార్గదర్శకత్వం",
-            why_desc: "మేము ప్రాచీన తాటి ఆకు మాన్యుస్క్రిప్ట్ల ఆధారంగా ప్రామాణికమైన నాడీ జ్యోతిష్య రీడింగ్లను అందిస్తాము. సంవత్సరాల అనుభవంతో, మీ జీవితాన్ని సరైన దిశలో మార్గదర్శకంగా ఖచ్చితమైన అంచనాలు మరియు ప్రభావవంతమైన పరిష్కారాలను మేము అందిస్తాము.",
-            why_list1: "ప్రామాణికమైన నాడీ తాటి ఆకు రీడింగ్", why_list2: "ఖచ్చితమైన జీవిత అంచనాలు మరియు మార్గదర్శకత్వం",
-            why_list3: "వ్యక్తిగతీకరించిన పరిహారాలు", why_list4: "వేలాది మంది సంతృప్తి చెందిన క్లయింట్లచే నమ్మకం",
-            exp_number: "25", exp_plus: "+", exp_text: "సంవత్సరాల అనుభవం",
-            clients_num: "5000", clients_pl: "+", clients_txt: "సంతోషకరమైన క్లయింట్లు",
-            percent_num: "100", percent_sym: "%", percent_txt: "గోప్యమైన & నమ్మకమైన",
-            mobile_label: "మొబైల్", location_label: "ప్రదేశం", footer_address: "MIG-5 గ్రౌండ్ ఫ్లోర్, 6వ క్రాస్, టీచర్స్ కాలనీ, హోసూర్",
+            contact_span: "సంప్రదించు", contact_us_text: "ండి",
+            home_breadcrumb: "హోమ్", contact_breadcrumb: "సంప్రదించండి",
+            contact_heading: "సంప్రదించండి", location_heading: "ప్రదేశం",
+            address_text: "MIG-5 గ్రౌండ్ ఫ్లోర్, 6వ క్రాస్, టీచర్స్ కాలనీ, హోసూర్",
+            reach_us: "మమ్మల్ని చేరుకోండి", connect_title: "మార్గదర్శకత్వం & సంప్రదింపుల కోసం కనెక్ట్ అవ్వండి",
+            first_name: "మీ మొదటి పేరు", last_name: "మీ చివరి పేరు",
+            email: "మీ ఇమెయిల్", phone: "మీ సంప్రదింపు నంబర్",
+            message: "మీ ప్రశ్నను పంచుకోండి", submit_btn: "సంప్రదింపును అభ్యర్థించండి",
+            mobile_label: "మొబైల్", location_label: "ప్రదేశం",
+            footer_address: "MIG-5 గ్రౌండ్ ఫ్లోర్, 6వ క్రాస్, టీచర్స్ కాలనీ, హోసూర్",
             follow_us: "ఫాలో అవ్వండి", quick_link: "త్వరిత లింక్", our_services: "మా సేవలు",
-            nav_home: "హోమ్", nav_about: "మా గురించి", nav_services: "సేవలు", nav_gallery: "గ్యాలరీ", nav_contact: "సంప్రదించండి",
-            serv1: "సాధారణ నివేదిక", serv2: "కుటుంబం & ఫైనాన్స్", serv3: "తోబుట్టువులు & ధైర్యం", serv4: "తల్లి & సౌకర్యాలు",
-            serv5: "అప్పులు, వ్యాధి & దావా", serv6: "వివాహం", serv7: "దీర్ఘాయువు", serv8: "ఆధ్యాత్మిక సాధన",
+            nav_home: "హోమ్", nav_about: "మా గురించి", nav_services: "సేవలు",
+            nav_gallery: "గ్యాలరీ", nav_contact: "సంప్రదించండి",
+            serv1: "సాధారణ నివేదిక", serv2: "కుటుంబం & ఫైనాన్స్",
+            serv3: "తోబుట్టువులు & ధైర్యం", serv4: "తల్లి & సౌకర్యాలు",
+            serv5: "అప్పులు, వ్యాధి & దావా", serv6: "వివాహం",
+            serv7: "దీర్ఘాయువు", serv8: "ఆధ్యాత్మిక సాధన",
             serv9: "వృత్తి", serv10: "ఖర్చు & నష్టాలు"
         }
     };
@@ -803,6 +655,14 @@
             const key = el.getAttribute('data-key');
             if (t[key]) {
                 el.textContent = t[key];
+            }
+        });
+        
+        // Update all placeholders
+        document.querySelectorAll('[data-placeholder-key]').forEach(el => {
+            const key = el.getAttribute('data-placeholder-key');
+            if (t[key]) {
+                el.placeholder = t[key];
             }
         });
         
@@ -836,24 +696,25 @@
     }
     </script>
     
-    <script>
-    const toggleBtn = document.getElementById("callToggle");
-    const enquiryBox = document.getElementById("enquiryBox");
+      <script>
+  const toggleBtn = document.getElementById("callToggle");
+  const enquiryBox = document.getElementById("enquiryBox");
 
-    toggleBtn.addEventListener("click", () => {
-        enquiryBox.style.display = enquiryBox.style.display === "block" ? "none" : "block";
-    });
+  toggleBtn.addEventListener("click", () => {
+    enquiryBox.style.display =
+      enquiryBox.style.display === "block" ? "none" : "block";
+  });
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".floating-contact")) {
-            enquiryBox.style.display = "none";
-        }
-    });
-    toggleBtn.addEventListener("click", () => {
-        enquiryBox.classList.toggle("show");
-    });
-    </script>
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".floating-contact")) {
+      enquiryBox.style.display = "none";
+    }
+  });
+  toggleBtn.addEventListener("click", () => {
+  enquiryBox.classList.toggle("show");
+});
+</script>
 </body>
 
-<!-- Mirrored from html.awaikenthemes.com/lenity/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 May 2026 11:43:57 GMT -->
+<!-- Mirrored from html.awaikenthemes.com/lenity/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 May 2026 11:44:06 GMT -->
 </html>
