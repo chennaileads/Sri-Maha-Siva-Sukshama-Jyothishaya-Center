@@ -1028,11 +1028,11 @@ header.main-header .header-sticky.active{
 .about-img-1 img,
 .about-img-2 img{
 	width: 100%;
-	object-fit: cover;
+	object-fit:cover;
 }
 
 .about-img-1 img{
-	aspect-ratio: 1 / 0.95;
+	/* aspect-ratio: 1/ ; */
 }
 
 .about-img-2{
